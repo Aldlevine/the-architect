@@ -1,0 +1,46 @@
+{
+  "name": "the-architect",
+  "version": "0.0.0",
+  "description": "A service registry and message broker system.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldlevine/the-architect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aldlevine/the-architect/issues"
+  },
+  "homepage": "https://github.com/Aldlevine/the-architect#readme",
+  "author": "Aaron Levine <ald.levine@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "docs": "esdoc",
+    "pkg.update": "node lib/update-pkgjson.js ./packages/node_modules && format-package -w",
+    "precommit": "npm test && npm run docs && npm run pkg.update && git add docs && git add 'package.json' '**/package.json'",
+    "test": "ava -v"
+  },
+  "keywords": [
+    "microservice",
+    "micro",
+    "service",
+    "message-broker",
+    "message",
+    "broker"
+  ],
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "@zdychacek/detective": "git+https://github.com/zdychacek/node-detective.git",
+    "ava": "^0.23.0",
+    "esdoc": "^1.0.3",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-node": "^1.0.2",
+    "esdoc-standard-plugin": "^1.0.0",
+    "format-package": "^4.0.2",
+    "glob": "^7.1.2",
+    "husky": "^0.14.3",
+    "minimist": "^1.2.0"
+  }
+}

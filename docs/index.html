@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | the-architect</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A service registry and message broker system."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="the-architect"><meta property="twitter:description" content="A service registry and message broker system."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Aldlevine/the-architect"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#message">message</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node_modules/message/message.js~Message.html">Message</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#service-registry">service-registry</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node_modules/service-registry/service-registry.js~ServiceRegistry.html">ServiceRegistry</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="the-architect">The Architect</h1><p>A service registry and message broker system.</p>
+<h2 id="goals">Goals</h2><p>These are the dreams.</p>
+<ul>
+<li>A service registry that acts as a proxy between services.</li>
+<li>A load balancing scheme for synchronous transport.</li>
+<li>A message queue for asynchronous transport.</li>
+</ul>
+<h2 id="parts-and-pieces">Parts and Pieces</h2><p>This is the stuff that dreams are made of.</p>
+<h3 id="service-registry">service-registry</h3><p>The service registry stores and retrieves services by both a service uri and a
+service id.</p>
+<p>When a service worker starts, it must make a tcp connection to the service
+registry. After the registry receives the register request it assigns the
+service an id and stores the service&apos;s information in a database. When a service
+worker&apos;s connection is broken the registry removes it from the database based on
+the service&apos;s id.</p>
+<pre><code><code class="source-code prettyprint">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510; &#x2551;
+&#x2502; &#x2502; register &#x2502; &#x2550;&#x2550;&#x2550;&gt; &#x2502; service &#x2502; &#x2550;&#x2550;&#x2550;&gt; &#x2502; service  &#x2502; &#x2551;
+&#x2502; &#x2502; service  &#x2502;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2502; registry &#x2502; &#x2551;
+&#x2502; &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;                       &#x2502;          &#x2502; &#x2551;
+&#x2502;                                    &#x2502;          &#x2502; &#x2551;
+&#x2502; &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x2502;          &#x2502; &#x2551;
+&#x2502; &#x2502; query    &#x2502; &#x2550;&#x2550;&#x2550;&gt; &#x2502; query   &#x2502; &#x2550;&#x2550;&#x2550;&gt; &#x2502;          &#x2502; &#x2551;
+&#x2502; &#x2502; service  &#x2502;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2502;          &#x2502; &#x2551;
+&#x2502; &#x2502;          &#x2502;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x2502;          &#x2502; &#x2551;
+&#x2502; &#x2502;          &#x2502; &lt;&#x2550;&#x2550;&#x2550; &#x2502; service &#x2502; &lt;&#x2550;&#x2550;&#x2550; &#x2502;          &#x2502; &#x2551;
+&#x2502; &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518; &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;</code>
+</code></pre><h3 id="service">service</h3><p>A service is a stub that contains information about it&apos;s workers in the service
+registry. It provides the means of tracking and communicating with a worker or
+groups of workers.</p>
+<h3 id="worker">worker</h3><p>A single instance of a service. This typically translates to a single process,
+however it is possible(though not advised) for multiple workers to run in one
+process. As there is no specification for how workers should function, only a
+messaging API, it is not necessary for a worker to use the provided <code>worker</code>
+module in order to communicate. This helps in providing a simple and standard
+interface for communicating and allows for the simple implementation of this
+standard in any language. However using a standardized module is recommended to
+ensure stabile and predictable communication.</p>
+<p>When a worker&apos;s connection to the service registry is unexpectedly closed, while
+it&apos;s not necessary, the worker should follow a reconnect policy such as:</p>
+<ul>
+<li>ondisconnect: {&quot;retry&quot;, &quot;exit&quot;, &quot;ignore&quot;}</li>
+<li>retries: {number}</li>
+<li>interval: {ms}</li>
+</ul>
+<h3 id="worker-picker">worker-picker</h3><p>The worker picker is a mechanism that retrieves a worker from a service
+addressed by it&apos;s uri. The main purpose of this mechanism is to provide load
+balancing to service requests. While there is no defined algorithm the &quot;power of
+two random choices&quot; algorithm is an effective and simple load balancing
+algorithm.</p>
+<p>When the message broker needs to access a single worker from a service by the
+service&apos;s uri, it requests this worker via the worker picker.</p>
+<h3 id="message-broker">message-broker</h3><p>The message broker is the communication hub. It manages all incoming and
+outgoing messages between services.</p>
+<p>Once a service is registered, it&apos;s connection is piped to the message broker.
+Once connected, a service can begin sending and receiving messages from other
+services. The message broker identifies from the message headers the intended
+recipient service(s) and delivers the message.</p>
+<p>There are five primary messaging schemes: <strong>PUB/SUB</strong>, <strong>REQ/RES</strong>, <strong>DIR</strong>,
+<strong>QUE</strong>, and  <strong>SRV</strong>.</p>
+<ol>
+<li><strong>PUB/SUB</strong>: <em>publish / subscribe</em><ul>
+<li>This messaging scheme is intended for broadcasting messages to any service
+that requests these messages. An example might include &quot;log&quot; messages
+intended for a logging service to receive and write to a file. If a service
+subscribes to &quot;log&quot; messages, any &quot;log&quot; messages published by any service
+will be delivered to the subscribing service.</li>
+<li>When a service registers for a subscription it recieves all matching
+messages sent by any other unique service. This can include messages from
+other services of the same type (unless specifically excluded by the
+criteria).</li>
+<li>When a service publishes a message, the same message is sent to all services
+with a matching subscription.</li>
+</ul>
+</li>
+<li><strong>REQ/RES</strong>: <em>request / response</em><ul>
+<li>This messaging scheme is intended for typically synchronous and composable
+tasks.</li>
+<li>When a service makes a request of either a unique service or service type, a
+request message is sent to the reciving service. Once the requested service
+finishes processing the request, it responds with another message that is
+delivered directly to the original requesting service.</li>
+<li>The message broker tracks the number of open requests for each worker.</li>
+</ul>
+</li>
+<li><strong>DIR</strong>: <em>direct message</em><ul>
+<li>This message scheme is a sort of half-bake REQ/RES scheme.</li>
+<li>When a service sends a direct message to another service, it does so without
+expecting any response.</li>
+</ul>
+</li>
+<li><strong>QUE</strong>: <em>registry query</em><ul>
+<li>This is a message scheme that allows a worker to communicate directly with
+the service registry.</li>
+<li>The purpose of this scheme is to provide a means of introspection into the
+service registry.</li>
+<li>Examples of useful information that this scheme could provide are:<ul>
+<li>A list of the available services.</li>
+<li>The number of open requests for each service.</li>
+<li>The average execution time of requests for each service.</li>
+<li>A list of subscribers and their message criteria.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>SRV</strong>: <em>service registry connect signal</em><ul>
+<li>This is a special message scheme that connects service registries together.</li>
+<li>The purpose of this is to enable multiple replicas of the service registry
+to share access to services.</li>
+</ul>
+</li>
+</ol>
+<h3 id="message">message</h3><p>A message is a packet of data sent between services. It consists of 3 pieces:</p>
+<ol>
+<li>The message scheme<ul>
+<li>This can be equated to http methods</li>
+<li>The available schemes are:<ul>
+<li>PUB</li>
+<li>SUB</li>
+<li>REQ</li>
+<li>RES</li>
+<li>DIR</li>
+<li>QUE</li>
+<li>SRV</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The message headers<ul>
+<li>This can be equated to http headers.</li>
+<li>While any arbitrary headers are allowed, there a certain headers reserved
+for standard communication:<ul>
+<li><strong>id</strong>: The message id</li>
+<li><strong>src</strong>: The id of the source worker</li>
+<li><strong>tgt</strong>: The id of the target worker -- <em>only applicable to direct
+messages {DIR}</em></li>
+<li><strong>uri</strong>: The uri of the target service -- <em>only applicable for
+subscriptions and service requests {REQ, SUB}</em></li>
+<li><strong>req</strong>: The id of the request message that triggered a response -- <em>only
+applicable for service responses {RES}</em></li>
+<li><strong>tag</strong>: The subscription tag for the pub/sub scheme. -- <em>only applicable
+for publish and subscribe messages {PUB, SUB}</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The message body<ul>
+<li>This can be equated to an http body</li>
+</ul>
+</li>
+</ol>
+<pre><code><code class="source-code prettyprint">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; example publish message                          &#x2551;
+&#x2502; {                                                &#x2551;
+&#x2502;   scheme: &apos;PUB&apos;,                                 &#x2551;
+&#x2502;   headers: {                                     &#x2551;
+&#x2502;     id: &apos;f2a7c7c1-8ddf-40c6-bd05-9dc6c8128678&apos;,  &#x2551;
+&#x2502;     src: &apos;4faacdc9-bd31-410f-9a17-5e884d709f78&apos;, &#x2551;
+&#x2502;     tag: &apos;log.my-service&apos;                        &#x2551;
+&#x2502;   },                                             &#x2551;
+&#x2502;   body: {                                        &#x2551;
+&#x2502;     level: &apos;error&apos;,                              &#x2551;
+&#x2502;     message: &apos;Something went wrong!&apos;,            &#x2551;
+&#x2502;     stack: &apos;And this is where it happened...&apos;    &#x2551;
+&#x2502;   }                                              &#x2551;
+&#x2502; }                                                &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;
+&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; example subscribe message                        &#x2551;
+&#x2502; {                                                &#x2551;
+&#x2502;   scheme: &apos;SUB&apos;,                                 &#x2551;
+&#x2502;   headers: {                                     &#x2551;
+&#x2502;     id: &apos;362701ad-121d-49e9-b7b0-7eec8a12f6a7&apos;,  &#x2551;
+&#x2502;     src: &apos;b2ef6770-2fdb-4f5a-afce-6a1df455c418&apos;, &#x2551;
+&#x2502;     tag: &apos;log.*&apos;                                 &#x2551;
+&#x2502;   },                                             &#x2551;
+&#x2502;   body: {                                        &#x2551;
+&#x2502;     level: {$in: [&apos;warning&apos;, &apos;error&apos;]}           &#x2551;
+&#x2502;   }                                              &#x2551;
+&#x2502; }                                                &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;
+&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; example request message                          &#x2551;
+&#x2502; {                                                &#x2551;
+&#x2502;   scheme: &apos;REQ&apos;,                                 &#x2551;
+&#x2502;   headers: {                                     &#x2551;
+&#x2502;     id: &apos;1bd0567e-8150-4f6b-935c-3b9b8aa05ad4&apos;,  &#x2551;
+&#x2502;     src: &apos;4faacdc9-bd31-410f-9a17-5e884d709f78&apos;, &#x2551;
+&#x2502;     uri: &apos;greeter/say-hello&apos;                     &#x2551;
+&#x2502;   },                                             &#x2551;
+&#x2502;   body: {                                        &#x2551;
+&#x2502;     fname: &apos;Marl&apos;,                               &#x2551;
+&#x2502;     lname: &apos;Karx&apos;                                &#x2551;
+&#x2502;   }                                              &#x2551;
+&#x2502; }                                                &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;
+&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; example response message                         &#x2551;
+&#x2502; {                                                &#x2551;
+&#x2502;   scheme: &apos;RES&apos;,                                 &#x2551;
+&#x2502;   headers: {                                     &#x2551;
+&#x2502;     id: &apos;f9f6424d-1278-447e-95ba-da04206bde32&apos;,  &#x2551;
+&#x2502;     src: &apos;b2ef6770-2fdb-4f5a-afce-6a1df455c418&apos;, &#x2551;
+&#x2502;     req: &apos;1bd0567e-8150-4f6b-935c-3b9b8aa05ad4&apos;, &#x2551;
+&#x2502;   },                                             &#x2551;
+&#x2502;   body: {                                        &#x2551;
+&#x2502;     greeting: &apos;Hello Mark Karx!&apos;                 &#x2551;
+&#x2502;   }                                              &#x2551;
+&#x2502; }                                                &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;
+&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; example direct message                           &#x2551;
+&#x2502; {                                                &#x2551;
+&#x2502;   headers: {                                     &#x2551;
+&#x2502;   scheme: &apos;DIR&apos;,                                 &#x2551;
+&#x2502;     id: &apos;5b51247d-6401-4fa0-ad46-5543b82482b3&apos;,  &#x2551;
+&#x2502;     src: &apos;b2ef6770-2fdb-4f5a-afce-6a1df455c418&apos;, &#x2551;
+&#x2502;     tgt: &apos;4faacdc9-bd31-410f-9a17-5e884d709f78&apos;, &#x2551;
+&#x2502;   },                                             &#x2551;
+&#x2502;   body: {                                        &#x2551;
+&#x2502;     body: {                                      &#x2551;
+&#x2502;       message: &apos;Here, take this&apos;,                &#x2551;
+&#x2502;       stuff: {}                                  &#x2551;
+&#x2502;     }                                            &#x2551;
+&#x2502;   }                                              &#x2551;
+&#x2502; }                                                &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;</code>
+</code></pre><h2 id="help-yourself">Help yourself</h2><p>These things are left up to the designer to implement. <em>(Though, there may be
+prefabs out there somewhere ;)</em></p>
+<h3 id="matcher">matcher</h3><p>The matcher is a mechanism that determines if a given message meets the criteria
+for a subscriber. It should match on the <code>tag</code> header and <code>body</code>, but can match
+on any part of the message. A recommended implementation is to match the tag
+against a glob pattern (<a href="https://github.com/isaacs/minimatch">minimatch</a>) and
+the body through <a href="https://github.com/crcn/sift.js">sift.js</a>.</p>
+<pre><code><code class="source-code prettyprint">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;     &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;     &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510; &#x2551;
+&#x2502; &#x2502; message &#x2502;     &#x2502;  true   &#x2502; &#x2550;&#x2550;&gt; &#x2502; send message  &#x2502; &#x2551;
+&#x2502; &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;     &#x2514;&#x2500;&#x2500;&#x2500;&#x2565;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;     &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518; &#x2551;
+&#x2502;      &#x2551;              &#x2551;                   &#x2551;         &#x2551;
+&#x2502;      &#x2551;              &#x2551;                   V         &#x2551;
+&#x2502;      &#x2551;          &#x2554;&#x2550;&#x2550;&#x2550;&#x2569;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2557;     &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510; &#x2551;
+&#x2502;      &#x255A;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&gt; &#x2551; matcher &#x2551; &lt;&#x2500;&#x2500; &#x2502; subscription  &#x2502; &#x2551;
+&#x2502;                 &#x255A;&#x2550;&#x2550;&#x2550;&#x2564;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;     &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;.&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518; &#x2551;
+&#x2502;                     &#x2502;           &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;.&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510; &#x2551;
+&#x2502; &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;     &#x250C;&#x2500;&#x2500;&#x2500;&#x2534;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;     &#x2502;   . . . . .   &#x2502; &#x2551;
+&#x2502; &#x2502; ignore  &#x2502; &lt;&#x2500;&#x2500; &#x2502;  false  &#x2502;     &#x2502; subscriptions &#x2502; &#x2551;
+&#x2502; &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;     &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;     &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518; &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;</code>
+</code></pre><h3 id="balancer">balancer</h3><p>The balancer is a mechanism that provides the algorithm used by the worker
+picker.</p>
+<p><em><strong>TODO</strong>: provide more info.</em></p>
+<h3 id="transcoder">transcoder</h3><p>The transcoder is a duplex transform stream. On the front-end it reads and
+writes objects. On the back-end it reads and writes buffers.</p>
+<p>The purpose of this module is to simplify streaming encoded messages to and from
+sockets and http requests/responses. However, it can be used as a bidirectional
+transform for any duplex stream. While the message encoding system is not
+defined, a good option that works well with this spec is
+<a href="https://github.com/msgpack/msgpack">msgpack</a>.</p>
+<pre><code><code class="source-code prettyprint">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502;   Front end                             Back end       &#x2551;
+&#x2502; &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510; &#x2551;
+&#x2502; &#x2502; write object &#x2502; &#x2550;&#x2550;&#x2550;&gt; &#x2502; encode &#x2502; &#x2500;&#x2500;&#x2500;&gt; &#x2502; read buffer  &#x2502; &#x2551;
+&#x2502; &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518; &#x2551;
+&#x2502; &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;      &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510; &#x2551;
+&#x2502; &#x2502; read object  &#x2502; &lt;&#x2550;&#x2550;&#x2550; &#x2502; decode &#x2502; &lt;&#x2500;&#x2500;&#x2500; &#x2502; write buffer &#x2502; &#x2551;
+&#x2502; &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;      &#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518; &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;</code>
+</code></pre></div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

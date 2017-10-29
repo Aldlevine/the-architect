@@ -1,0 +1,17 @@
+{
+  "coverage": "100%",
+  "expectCount": 17,
+  "actualCount": 17,
+  "files": {
+    "node_modules/message/message.js": {
+      "expectCount": 13,
+      "actualCount": 13,
+      "undocumentLines": []
+    },
+    "node_modules/service-registry/service-registry.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    }
+  }
+}

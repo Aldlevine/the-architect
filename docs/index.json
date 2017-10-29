@@ -1,0 +1,1020 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "node_modules/.external-ecmascript.js",
+    "static": true,
+    "longname": "node_modules/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "node_modules/message/message.js",
+    "content": "const UUID = require('uuid/v4');\n\n/**\n * A virtual type representing a message scheme.\n * These should be retrieved from {@link Message.schemes}.\n * @typedef {number|string} Scheme\n */\n\n/** A class representing a message. */\nmodule.exports = class Message\n{\n\n  /**\n   * Creates a message.\n   * @param {Scheme} scheme - The message scheme.\n   * @param {Object} headers - The message headers.\n   * @param {Object} body - The message body.\n   * @return {Message}\n   */\n  constructor (scheme, headers={}, body={})\n  {\n    // validate scheme\n    if (!(scheme in Message.schemes)) {\n      throw new TypeError(`\"${scheme}\" is not a valid message scheme.`);\n    }\n\n    // validate required headers\n    const requiredHeaders = Message._requiredHeaders[scheme];\n    for (let header of requiredHeaders) {\n      if (!(header in headers)) {\n        throw new TypeError(`Excpected \"${header}\" header for \"${scheme}\" message.`);\n      }\n    }\n\n    // validate reserved headers\n    const reservedHeaders = Message._reservedHeaders[scheme];\n    for (let header of reservedHeaders) {\n      if (header in headers) {\n        throw new TypeError(`The \"${header}\" header is reserved for \"${scheme}\" messages.`);\n      }\n    }\n\n    /** packs data in array for smaller package */\n    this._data = [scheme, {...headers, id: UUID()}, body];\n  }\n\n  /**\n   * Creates a message directly from the data component of another message.\n   * This is intended for rebuilding a message after deserialization.\n   * @param {Array} data - The message data.\n   * @return {Message} The message represented by the data.\n   */\n  static fromData (data)\n  {\n    const msg = Object.create(Message.prototype);\n    msg._data = data;\n    return msg;\n  }\n\n  /**\n   * Gets the message data.\n   * @type {Array<Scheme, Object, Object>}\n   */\n  get data () {return this._data}\n\n  /**\n   * Gets the message scheme.\n   * @type {Scheme}\n   */\n  get scheme () {return this._data[0]}\n\n  /**\n   * Gets the message headers.\n   * @type {Object}\n   */\n  get headers () {return this._data[1]}\n\n  /**\n   * Gets the message body.\n   * @type {Object}\n   */\n  get body () {return this._data[2]}\n  /**\n   * Sets the message body.\n   * @param {Object} _\n   */\n  set body (v) {this._data[2] = v}\n\n  /**\n   * A handy way to access different schemes without fear of typos.\n   * @type {Map<string, Scheme>}\n   */\n  static get schemes ()\n  {\n    return {\n      get PUB () {return 'PUB'},\n      get SUB () {return 'SUB'},\n      get REQ () {return 'REQ'},\n      get RES () {return 'RES'},\n      get DIR () {return 'DIR'},\n      get QUE () {return 'QUE'},\n      get SRV () {return 'SRV'},\n    }\n  }\n\n  /**\n   * The headers that are required for each message scheme.\n   * @return {Map<Scheme, string[]>}\n   */\n  static get _requiredHeaders ()\n  {\n    const {PUB, SUB, REQ, RES, DIR, QUE, SRV} = Message.schemes;\n    return {\n      [PUB]: ['src', 'tag'],\n      [SUB]: ['src', 'tag'],\n      [REQ]: ['src', 'uri'],\n      [RES]: ['src', 'res'],\n      [DIR]: ['src', 'tgt'],\n      [QUE]: ['src'],\n      [SRV]: [],\n    }\n  }\n\n  /**\n   * The headers that are reserved for each message scheme.\n   * @return {Map<Scheme, string[]>}\n   */\n  static get _reservedHeaders ()\n  {\n    const {PUB, SUB, REQ, RES, DIR, QUE, SRV} = Message.schemes;\n    return {\n      [PUB]: ['id'],\n      [SUB]: ['id'],\n      [REQ]: ['id'],\n      [RES]: ['id'],\n      [DIR]: ['id'],\n      [QUE]: ['id'],\n      [SRV]: ['id'],\n    }\n  }\n}\n",
+    "static": true,
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/node_modules/message/message.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "UUID",
+    "memberof": "node_modules/message/message.js",
+    "static": true,
+    "longname": "node_modules/message/message.js~UUID",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/node_modules/message/message.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "typedef",
+    "name": "Scheme",
+    "memberof": "node_modules/message/message.js",
+    "static": true,
+    "longname": "node_modules/message/message.js~Scheme",
+    "access": "public",
+    "description": "A virtual type representing a message scheme.\nThese should be retrieved from {@link Message.schemes}.",
+    "type": {
+      "types": [
+        "number",
+        "string"
+      ],
+      "optional": false,
+      "name": "Scheme"
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "class",
+    "name": "Message",
+    "memberof": "node_modules/message/message.js",
+    "static": true,
+    "longname": "node_modules/message/message.js~Message",
+    "access": "public",
+    "export": true,
+    "importPath": "the-architect/node_modules/message/message.js",
+    "importStyle": "Message",
+    "description": "A class representing a message.",
+    "lineNumber": 10,
+    "interface": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#constructor",
+    "access": "public",
+    "description": "Creates a message.",
+    "lineNumber": 20,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Scheme"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "scheme",
+        "description": "The message scheme."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "headers",
+        "description": "The message headers."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "body",
+        "description": "The message body."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Message"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "_data",
+    "memberof": "node_modules/message/message.js~Message",
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#_data",
+    "access": "private",
+    "description": "packs data in array for smaller package",
+    "lineNumber": 44,
+    "ignore": true,
+    "type": {
+      "types": [
+        "undefined[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "fromData",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "node_modules/message/message.js~Message.fromData",
+    "access": "public",
+    "description": "Creates a message directly from the data component of another message.\nThis is intended for rebuilding a message after deserialization.",
+    "lineNumber": 53,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "The message data."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Message"
+      ],
+      "spread": false,
+      "description": "The message represented by the data."
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "get",
+    "name": "data",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#data",
+    "access": "public",
+    "description": "Gets the message data.",
+    "lineNumber": 64,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array<Scheme, Object, Object>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "get",
+    "name": "scheme",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#scheme",
+    "access": "public",
+    "description": "Gets the message scheme.",
+    "lineNumber": 70,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Scheme"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "get",
+    "name": "headers",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#headers",
+    "access": "public",
+    "description": "Gets the message headers.",
+    "lineNumber": 76,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "get",
+    "name": "body",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#body",
+    "access": "public",
+    "description": "Gets the message body.",
+    "lineNumber": 82,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "set",
+    "name": "body",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/message/message.js~Message#body",
+    "access": "public",
+    "description": "Sets the message body.",
+    "lineNumber": 87,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "_",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 60,
+    "kind": "get",
+    "name": "schemes",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "node_modules/message/message.js~Message.schemes",
+    "access": "public",
+    "description": "A handy way to access different schemes without fear of typos.",
+    "lineNumber": 93,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Map<string, Scheme>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "get",
+    "name": "_requiredHeaders",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "node_modules/message/message.js~Message._requiredHeaders",
+    "access": "private",
+    "description": "The headers that are required for each message scheme.",
+    "lineNumber": 110,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Map<Scheme, string[]>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "ignore": true,
+    "type": {
+      "types": [
+        "{\"PUB\": *, \"SUB\": *, \"REQ\": *, \"RES\": *, \"DIR\": *, \"QUE\": *, \"SRV\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "get",
+    "name": "_reservedHeaders",
+    "memberof": "node_modules/message/message.js~Message",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "node_modules/message/message.js~Message._reservedHeaders",
+    "access": "private",
+    "description": "The headers that are reserved for each message scheme.",
+    "lineNumber": 128,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Map<Scheme, string[]>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "ignore": true,
+    "type": {
+      "types": [
+        "{\"PUB\": *, \"SUB\": *, \"REQ\": *, \"RES\": *, \"DIR\": *, \"QUE\": *, \"SRV\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "name": "node_modules/service-registry/service-registry.js",
+    "content": "const UUID = require('uuid/v4');\nconst net = require('net');\n\n/** A class representing a service registry. */\nmodule.exports = class ServiceRegistry\n{\n  /**\n   * Creates a service registry.\n   * @return {ServiceRegistry}\n   */\n  constructor ()\n  {\n  }\n}\n",
+    "static": true,
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/node_modules/service-registry/service-registry.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "name": "UUID",
+    "memberof": "node_modules/service-registry/service-registry.js",
+    "static": true,
+    "longname": "node_modules/service-registry/service-registry.js~UUID",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/node_modules/service-registry/service-registry.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "net",
+    "memberof": "node_modules/service-registry/service-registry.js",
+    "static": true,
+    "longname": "node_modules/service-registry/service-registry.js~net",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/node_modules/service-registry/service-registry.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "class",
+    "name": "ServiceRegistry",
+    "memberof": "node_modules/service-registry/service-registry.js",
+    "static": true,
+    "longname": "node_modules/service-registry/service-registry.js~ServiceRegistry",
+    "access": "public",
+    "export": true,
+    "importPath": "the-architect/node_modules/service-registry/service-registry.js",
+    "importStyle": "ServiceRegistry",
+    "description": "A class representing a service registry.",
+    "lineNumber": 5,
+    "interface": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "node_modules/service-registry/service-registry.js~ServiceRegistry",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "node_modules/service-registry/service-registry.js~ServiceRegistry#constructor",
+    "access": "public",
+    "description": "Creates a service registry.",
+    "lineNumber": 11,
+    "return": {
+      "nullable": null,
+      "types": [
+        "ServiceRegistry"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# The Architect\n\nA service registry and message broker system.\n\n\n## Goals\n\nThese are the dreams.\n\n- A service registry that acts as a proxy between services.\n- A load balancing scheme for synchronous transport.\n- A message queue for asynchronous transport.\n\n\n## Parts and Pieces\n\nThis is the stuff that dreams are made of.\n\n\n### service-registry\n\nThe service registry stores and retrieves services by both a service uri and a\nservice id.\n\nWhen a service worker starts, it must make a tcp connection to the service\nregistry. After the registry receives the register request it assigns the\nservice an id and stores the service's information in a database. When a service\nworker's connection is broken the registry removes it from the database based on\nthe service's id.\n\n```\n┌─────────────────────────────────────────────────╖\n│ ┌──────────┐      ┌─────────┐      ┌──────────┐ ║\n│ │ register │ ═══> │ service │ ═══> │ service  │ ║\n│ │ service  │      └─────────┘      │ registry │ ║\n│ └──────────┘                       │          │ ║\n│                                    │          │ ║\n│ ┌──────────┐      ┌─────────┐      │          │ ║\n│ │ query    │ ═══> │ query   │ ═══> │          │ ║\n│ │ service  │      └─────────┘      │          │ ║\n│ │          │      ┌─────────┐      │          │ ║\n│ │          │ <═══ │ service │ <═══ │          │ ║\n│ └──────────┘      └─────────┘      └──────────┘ ║\n╘═════════════════════════════════════════════════╝\n```\n\n\n### service\n\nA service is a stub that contains information about it's workers in the service\nregistry. It provides the means of tracking and communicating with a worker or\ngroups of workers.\n\n\n### worker\n\nA single instance of a service. This typically translates to a single process,\nhowever it is possible(though not advised) for multiple workers to run in one\nprocess. As there is no specification for how workers should function, only a\nmessaging API, it is not necessary for a worker to use the provided `worker`\nmodule in order to communicate. This helps in providing a simple and standard\ninterface for communicating and allows for the simple implementation of this\nstandard in any language. However using a standardized module is recommended to\nensure stabile and predictable communication.\n\nWhen a worker's connection to the service registry is unexpectedly closed, while\nit's not necessary, the worker should follow a reconnect policy such as:\n\n- ondisconnect: {\"retry\", \"exit\", \"ignore\"}\n- retries: {number}\n- interval: {ms}\n\n\n### worker-picker\n\nThe worker picker is a mechanism that retrieves a worker from a service\naddressed by it's uri. The main purpose of this mechanism is to provide load\nbalancing to service requests. While there is no defined algorithm the \"power of\ntwo random choices\" algorithm is an effective and simple load balancing\nalgorithm.\n\nWhen the message broker needs to access a single worker from a service by the\nservice's uri, it requests this worker via the worker picker.\n\n\n### message-broker\n\nThe message broker is the communication hub. It manages all incoming and\noutgoing messages between services.\n\nOnce a service is registered, it's connection is piped to the message broker.\nOnce connected, a service can begin sending and receiving messages from other\nservices. The message broker identifies from the message headers the intended\nrecipient service(s) and delivers the message.\n\nThere are five primary messaging schemes: __PUB/SUB__, __REQ/RES__, __DIR__,\n__QUE__, and  __SRV__.\n\n1. __PUB/SUB__: *publish / subscribe*\n  - This messaging scheme is intended for broadcasting messages to any service\n    that requests these messages. An example might include \"log\" messages\n    intended for a logging service to receive and write to a file. If a service\n    subscribes to \"log\" messages, any \"log\" messages published by any service\n    will be delivered to the subscribing service.\n  - When a service registers for a subscription it recieves all matching\n    messages sent by any other unique service. This can include messages from\n    other services of the same type (unless specifically excluded by the\n    criteria).\n  - When a service publishes a message, the same message is sent to all services\n    with a matching subscription.\n2. __REQ/RES__: *request / response*\n  - This messaging scheme is intended for typically synchronous and composable\n    tasks.\n  - When a service makes a request of either a unique service or service type, a\n    request message is sent to the reciving service. Once the requested service\n    finishes processing the request, it responds with another message that is\n    delivered directly to the original requesting service.\n  - The message broker tracks the number of open requests for each worker.\n3. __DIR__: *direct message*\n  - This message scheme is a sort of half-bake REQ/RES scheme.\n  - When a service sends a direct message to another service, it does so without\n    expecting any response.\n4. __QUE__: *registry query*\n  - This is a message scheme that allows a worker to communicate directly with\n    the service registry.\n  - The purpose of this scheme is to provide a means of introspection into the\n    service registry.\n  - Examples of useful information that this scheme could provide are:\n    - A list of the available services.\n    - The number of open requests for each service.\n    - The average execution time of requests for each service.\n    - A list of subscribers and their message criteria.\n5. __SRV__: *service registry connect signal*\n  - This is a special message scheme that connects service registries together.\n  - The purpose of this is to enable multiple replicas of the service registry\n    to share access to services.\n\n\n### message\n\nA message is a packet of data sent between services. It consists of 3 pieces:\n1. The message scheme\n  - This can be equated to http methods\n  - The available schemes are:\n    - PUB\n    - SUB\n    - REQ\n    - RES\n    - DIR\n    - QUE\n    - SRV\n2. The message headers\n  - This can be equated to http headers.\n  - While any arbitrary headers are allowed, there a certain headers reserved\n    for standard communication:\n    - __id__: The message id\n    - __src__: The id of the source worker\n    - __tgt__: The id of the target worker -- *only applicable to direct\n      messages {DIR}*\n    - __uri__: The uri of the target service -- *only applicable for\n      subscriptions and service requests {REQ, SUB}*\n    - __req__: The id of the request message that triggered a response -- *only\n      applicable for service responses {RES}*\n    - __tag__: The subscription tag for the pub/sub scheme. -- *only applicable\n      for publish and subscribe messages {PUB, SUB}*\n3. The message body\n  - This can be equated to an http body\n\n\n```\n┌──────────────────────────────────────────────────╖\n│ example publish message                          ║\n│ {                                                ║\n│   scheme: 'PUB',                                 ║\n│   headers: {                                     ║\n│     id: 'f2a7c7c1-8ddf-40c6-bd05-9dc6c8128678',  ║\n│     src: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│     tag: 'log.my-service'                        ║\n│   },                                             ║\n│   body: {                                        ║\n│     level: 'error',                              ║\n│     message: 'Something went wrong!',            ║\n│     stack: 'And this is where it happened...'    ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example subscribe message                        ║\n│ {                                                ║\n│   scheme: 'SUB',                                 ║\n│   headers: {                                     ║\n│     id: '362701ad-121d-49e9-b7b0-7eec8a12f6a7',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     tag: 'log.*'                                 ║\n│   },                                             ║\n│   body: {                                        ║\n│     level: {$in: ['warning', 'error']}           ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example request message                          ║\n│ {                                                ║\n│   scheme: 'REQ',                                 ║\n│   headers: {                                     ║\n│     id: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4',  ║\n│     src: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│     uri: 'greeter/say-hello'                     ║\n│   },                                             ║\n│   body: {                                        ║\n│     fname: 'Marl',                               ║\n│     lname: 'Karx'                                ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example response message                         ║\n│ {                                                ║\n│   scheme: 'RES',                                 ║\n│   headers: {                                     ║\n│     id: 'f9f6424d-1278-447e-95ba-da04206bde32',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     req: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4', ║\n│   },                                             ║\n│   body: {                                        ║\n│     greeting: 'Hello Mark Karx!'                 ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example direct message                           ║\n│ {                                                ║\n│   headers: {                                     ║\n│   scheme: 'DIR',                                 ║\n│     id: '5b51247d-6401-4fa0-ad46-5543b82482b3',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     tgt: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│   },                                             ║\n│   body: {                                        ║\n│     body: {                                      ║\n│       message: 'Here, take this',                ║\n│       stuff: {}                                  ║\n│     }                                            ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n```\n\n\n## Help yourself\n\nThese things are left up to the designer to implement. *(Though, there may be\nprefabs out there somewhere ;)*\n\n\n### matcher\n\nThe matcher is a mechanism that determines if a given message meets the criteria\nfor a subscriber. It should match on the `tag` header and `body`, but can match\non any part of the message. A recommended implementation is to match the tag\nagainst a glob pattern ([minimatch](https://github.com/isaacs/minimatch)) and\nthe body through [sift.js](https://github.com/crcn/sift.js).\n\n\n```\n┌───────────────────────────────────────────────────╖\n│ ┌─────────┐     ┌─────────┐     ┌───────────────┐ ║\n│ │ message │     │  true   │ ══> │ send message  │ ║\n│ └─────────┘     └───╥─────┘     └───────────────┘ ║\n│      ║              ║                   ║         ║\n│      ║              ║                   V         ║\n│      ║          ╔═══╩═════╗     ┌───────────────┐ ║\n│      ╚════════> ║ matcher ║ <── │ subscription  │ ║\n│                 ╚═══╤═════╝     └──────┐.┌──────┘ ║\n│                     │           ┌──────┘.└──────┐ ║\n│ ┌─────────┐     ┌───┴─────┐     │   . . . . .   │ ║\n│ │ ignore  │ <── │  false  │     │ subscriptions │ ║\n│ └─────────┘     └─────────┘     └───────────────┘ ║\n╘═══════════════════════════════════════════════════╝\n\n```\n\n\n### balancer\n\nThe balancer is a mechanism that provides the algorithm used by the worker\npicker.\n\n*__TODO__: provide more info.*\n\n\n### transcoder\n\nThe transcoder is a duplex transform stream. On the front-end it reads and\nwrites objects. On the back-end it reads and writes buffers.\n\nThe purpose of this module is to simplify streaming encoded messages to and from\nsockets and http requests/responses. However, it can be used as a bidirectional\ntransform for any duplex stream. While the message encoding system is not\ndefined, a good option that works well with this spec is\n[msgpack](https://github.com/msgpack/msgpack).\n\n\n```\n┌────────────────────────────────────────────────────────╖\n│   Front end                             Back end       ║\n│ ┌──────────────┐      ┌────────┐      ┌──────────────┐ ║\n│ │ write object │ ═══> │ encode │ ───> │ read buffer  │ ║\n│ └──────────────┘      └────────┘      └──────────────┘ ║\n│ ┌──────────────┐      ┌────────┐      ┌──────────────┐ ║\n│ │ read object  │ <═══ │ decode │ <─── │ write buffer │ ║\n│ └──────────────┘      └────────┘      └──────────────┘ ║\n╘════════════════════════════════════════════════════════╝\n```\n",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"the-architect\",\n  \"version\": \"0.0.0\",\n  \"description\": \"A service registry and message broker system.\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Aldlevine/the-architect.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/Aldlevine/the-architect/issues\"\n  },\n  \"homepage\": \"https://github.com/Aldlevine/the-architect#readme\",\n  \"author\": \"Aaron Levine <ald.levine@gmail.com>\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"docs\": \"esdoc\",\n    \"pkg.update\": \"node lib/update-pkgjson.js ./packages/node_modules && format-package -w\",\n    \"precommit\": \"npm test && npm run docs && npm run pkg.update && git add docs && git add 'package.json' '**/package.json'\",\n    \"test\": \"ava -v\"\n  },\n  \"keywords\": [\n    \"microservice\",\n    \"micro\",\n    \"service\",\n    \"message-broker\",\n    \"message\",\n    \"broker\"\n  ],\n  \"dependencies\": {\n    \"fs-extra\": \"^4.0.2\",\n    \"uuid\": \"^3.1.0\"\n  },\n  \"devDependencies\": {\n    \"@zdychacek/detective\": \"git+https://github.com/zdychacek/node-detective.git\",\n    \"ava\": \"^0.23.0\",\n    \"esdoc\": \"^1.0.3\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-node\": \"^1.0.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"format-package\": \"^4.0.2\",\n    \"glob\": \"^7.1.2\",\n    \"husky\": \"^0.14.3\",\n    \"minimist\": \"^1.2.0\"\n  }\n}\n",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

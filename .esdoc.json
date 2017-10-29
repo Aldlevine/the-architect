@@ -1,0 +1,26 @@
+{
+  "source": "./packages/node_modules/",
+  "destination": "./docs",
+  "plugins": [
+    {"name": "esdoc-node"},
+    {"name": "./lib/esdoc-require.js"},
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": {"enable": true},
+        "coverage": {"enable": true},
+        "accessor": {"access": ["public"], "autoPrivate": true},
+        "undocumentIdentifier": {"enable": true},
+        "unexportedIdentifier": {"enable": false},
+        "typeInference": {"enable": true},
+        "brand": {
+          "name": "The Architect"
+        }
+      }
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {"all": true}
+    }
+  ]
+}
