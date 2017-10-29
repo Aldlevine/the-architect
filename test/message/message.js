@@ -84,7 +84,7 @@ test('SRV scheme denies reserved headers', t => {
 
 test('Accessors get and set correct values', t => {
   const headers = {src: 'source', tag: 'tag'};
-  let m = new Message(PUB, {src: 'source', tag: 'tag'}, 'body');
+  let m = new Message(PUB, headers, 'body');
 
   t.is(m.scheme, PUB);
   t.is(m.data, m._data);
@@ -96,6 +96,12 @@ test('Accessors get and set correct values', t => {
   t.throws(() => m.scheme = `Can't set scheme`);
   t.throws(() => m.headers = `Can't set header object`);
 
-  t.body = `Can set the body object`;
-  t.is(t.body, `Can set the body object`);
+  m.body = `Can set the body object`;
+  t.is(m.body, `Can set the body object`);
+});
+
+test('Message.fromData works', t => {
+  const m1 = new Message(PUB, {src: 'source', tag: 'tag'}, 'body');
+  const m2 = Message.fromData(m1.data);
+  t.deepEqual(m1, m2);
 });

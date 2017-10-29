@@ -59,3 +59,7 @@ typings/
 
 # exclude packages/node_modules
 !packages/node_modules
+
+# code coverage
+coverage
+.nyc_output
