@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=dev)](https://travis-ci.org/Aldlevine/the-architect)
+<!-- HEAD -->
+[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=master)](https://travis-ci.org/Aldlevine/the-architect)
+[![Coverage Status](https://coveralls.io/repos/github/Aldlevine/the-architect/badge.svg?branch=master)](https://coveralls.io/github/Aldlevine/the-architect?branch=master)
 
 # The Architect
 

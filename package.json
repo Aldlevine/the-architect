@@ -14,10 +14,23 @@
   "author": "Aaron Levine <ald.levine@gmail.com>",
   "main": "index.js",
   "scripts": {
+    "build": "node ./lib/compose.js build",
     "docs": "esdoc",
-    "pkg.update": "node lib/update-pkgjson.js ./packages/node_modules && format-package -w",
-    "precommit": "npm test && npm run docs && npm run pkg.update && git add docs && git add 'package.json' '**/package.json'",
+    "pkgupdate": "node ./lib/compose.js pkgupdate",
+    "precommit": "npm run build -s",
     "test": "nyc ava -v"
+  },
+  "compose": {
+    "build": [
+      "nyc ava && echo",
+      "npm run docs && echo",
+      "npm run pkgupdate && echo",
+      "git add README.md docs package.json '**/package.json'"
+    ],
+    "pkgupdate": [
+      "node ./lib/update-pkgjson.js ./packages/node_modules",
+      "format-package -w"
+    ]
   },
   "keywords": [
     "microservice",
