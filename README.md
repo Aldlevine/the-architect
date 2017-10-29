@@ -96,7 +96,7 @@ recipient service(s) and delivers the message.
 There are five primary messaging schemes: __PUB/SUB__, __REQ/RES__, __DIR__,
 __QUE__, and  __SRV__.
 
-1. __PUB/SUB__: _publish / subscribe_
+1. __PUB/SUB__: *publish / subscribe*
   - This messaging scheme is intended for broadcasting messages to any service
     that requests these messages. An example might include "log" messages
     intended for a logging service to receive and write to a file. If a service
@@ -108,19 +108,19 @@ __QUE__, and  __SRV__.
     criteria).
   - When a service publishes a message, the same message is sent to all services
     with a matching subscription.
-2. __REQ/RES__: _request / response_
+2. __REQ/RES__: *request / response*
   - This messaging scheme is intended for typically synchronous and composable
     tasks.
   - When a service makes a request of either a unique service or service type, a
     request message is sent to the reciving service. Once the requested service
     finishes processing the request, it responds with another message that is
-    delivered directly to the originla requesting service.
+    delivered directly to the original requesting service.
   - The message broker tracks the number of open requests for each worker.
-3. __DIR__: _direct message_
+3. __DIR__: *direct message*
   - This message scheme is a sort of half-bake REQ/RES scheme.
   - When a service sends a direct message to another service, it does so without
     expecting any response.
-4. __QUE__: _registry query_
+4. __QUE__: *registry query*
   - This is a message scheme that allows a worker to communicate directly with
     the service registry.
   - The purpose of this scheme is to provide a means of introspection into the
@@ -130,7 +130,7 @@ __QUE__, and  __SRV__.
     - The number of open requests for each service.
     - The average execution time of requests for each service.
     - A list of subscribers and their message criteria.
-5. __SRV__: _service registry connect signal_
+5. __SRV__: *service registry connect signal*
   - This is a special message scheme that connects service registries together.
   - The purpose of this is to enable multiple replicas of the service registry
     to share access to services.
@@ -147,20 +147,22 @@ A message is a packet of data sent between services. It consists of 3 pieces:
     - REQ
     - RES
     - DIR
+    - QUE
+    - SRV
 2. The message headers
   - This can be equated to http headers.
   - While any arbitrary headers are allowed, there a certain headers reserved
     for standard communication:
     - __id__: The message id
     - __src__: The id of the source worker
-    - __tgt__: The id of the target worker -- _only applicable to direct
-      messages {DIR}_
-    - __uri__: The uri of the target service -- _only applicable for
-      subscriptions and service requests {REQ, SUB}_
-    - __req__: The id of the request message that triggered a response -- _only
-      applicable for service responses {RES}_
-    - __tag__: The subscription tag for the pub/sub scheme. -- _only applicable
-      for publish and subscribe messages {PUB, SUB}_
+    - __tgt__: The id of the target worker -- *only applicable to direct
+      messages {DIR}*
+    - __uri__: The uri of the target service -- *only applicable for
+      subscriptions and service requests {REQ, SUB}*
+    - __req__: The id of the request message that triggered a response -- *only
+      applicable for service responses {RES}*
+    - __tag__: The subscription tag for the pub/sub scheme. -- *only applicable
+      for publish and subscribe messages {PUB, SUB}*
 3. The message body
   - This can be equated to an http body
 
@@ -247,8 +249,8 @@ A message is a packet of data sent between services. It consists of 3 pieces:
 
 ## Help yourself
 
-These things are left up to the designer to implement. _(Though, there may be
-prefabs out there somewhere ;)_
+These things are left up to the designer to implement. *(Though, there may be
+prefabs out there somewhere ;)*
 
 
 ### matcher
@@ -277,6 +279,14 @@ the body through [sift.js](https://github.com/crcn/sift.js).
 ╘═══════════════════════════════════════════════════╝
 
 ```
+
+
+### balancer
+
+The balancer is a mechanism that provides the algorithm used by the worker
+picker.
+
+*__TODO__: provide more info.*
 
 
 ### transcoder
