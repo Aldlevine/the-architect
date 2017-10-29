@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=dev)](https://travis-ci.org/Aldlevine/the-architect)
+
 # The Architect
 
 A service registry and message broker system.
