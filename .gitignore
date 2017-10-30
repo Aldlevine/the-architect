@@ -57,10 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
-# exclude packages/node_modules
-!packages/node_modules
-!docs/**/node_modules
-
 # code coverage
 coverage
 .nyc_output

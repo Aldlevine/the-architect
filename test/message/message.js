@@ -1,5 +1,5 @@
 const test = require('ava');
-const Message = require('../../packages/node_modules/message');
+const Message = require('../../packages/message');
 const {PUB, SUB, REQ, RES, DIR, QUE, SRV} = Message.schemes;
 
 test('Doesn\'t allow invalid schemas', t => {

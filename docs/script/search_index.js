@@ -1,368 +1,368 @@
 window.esdocSearchIndex = [
   [
-    "the-architect/node_modules/message/message.js~message",
-    "class/node_modules/message/message.js~Message.html",
-    "<span>Message</span> <span class=\"search-result-import-path\">the-architect/node_modules/message/message.js</span>",
+    "the-architect/packages/message/message.js~message",
+    "class/packages/message/message.js~Message.html",
+    "<span>Message</span> <span class=\"search-result-import-path\">the-architect/packages/message/message.js</span>",
     "class"
   ],
   [
-    "the-architect/node_modules/service-registry/service-registry.js~serviceregistry",
-    "class/node_modules/service-registry/service-registry.js~ServiceRegistry.html",
-    "<span>ServiceRegistry</span> <span class=\"search-result-import-path\">the-architect/node_modules/service-registry/service-registry.js</span>",
+    "the-architect/packages/service-registry/service-registry.js~serviceregistry",
+    "class/packages/service-registry/service-registry.js~ServiceRegistry.html",
+    "<span>ServiceRegistry</span> <span class=\"search-result-import-path\">the-architect/packages/service-registry/service-registry.js</span>",
     "class"
   ],
   [
-    "node_modules/.external-ecmascript.js~array",
+    "packages/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-    "node_modules/.external-ecmascript.js~Array",
+    "packages/.external-ecmascript.js~Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~arraybuffer",
+    "packages/.external-ecmascript.js~arraybuffer",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
-    "node_modules/.external-ecmascript.js~ArrayBuffer",
+    "packages/.external-ecmascript.js~ArrayBuffer",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~boolean",
+    "packages/.external-ecmascript.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "node_modules/.external-ecmascript.js~Boolean",
+    "packages/.external-ecmascript.js~Boolean",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~dataview",
+    "packages/.external-ecmascript.js~dataview",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
-    "node_modules/.external-ecmascript.js~DataView",
+    "packages/.external-ecmascript.js~DataView",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~date",
+    "packages/.external-ecmascript.js~date",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
-    "node_modules/.external-ecmascript.js~Date",
+    "packages/.external-ecmascript.js~Date",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~error",
+    "packages/.external-ecmascript.js~error",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-    "node_modules/.external-ecmascript.js~Error",
+    "packages/.external-ecmascript.js~Error",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~evalerror",
+    "packages/.external-ecmascript.js~evalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
-    "node_modules/.external-ecmascript.js~EvalError",
+    "packages/.external-ecmascript.js~EvalError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~float32array",
+    "packages/.external-ecmascript.js~float32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
-    "node_modules/.external-ecmascript.js~Float32Array",
+    "packages/.external-ecmascript.js~Float32Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~float64array",
+    "packages/.external-ecmascript.js~float64array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
-    "node_modules/.external-ecmascript.js~Float64Array",
+    "packages/.external-ecmascript.js~Float64Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~function",
+    "packages/.external-ecmascript.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "node_modules/.external-ecmascript.js~Function",
+    "packages/.external-ecmascript.js~Function",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~generator",
+    "packages/.external-ecmascript.js~generator",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
-    "node_modules/.external-ecmascript.js~Generator",
+    "packages/.external-ecmascript.js~Generator",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~generatorfunction",
+    "packages/.external-ecmascript.js~generatorfunction",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
-    "node_modules/.external-ecmascript.js~GeneratorFunction",
+    "packages/.external-ecmascript.js~GeneratorFunction",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~infinity",
+    "packages/.external-ecmascript.js~infinity",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
-    "node_modules/.external-ecmascript.js~Infinity",
+    "packages/.external-ecmascript.js~Infinity",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~int16array",
+    "packages/.external-ecmascript.js~int16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
-    "node_modules/.external-ecmascript.js~Int16Array",
+    "packages/.external-ecmascript.js~Int16Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~int32array",
+    "packages/.external-ecmascript.js~int32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
-    "node_modules/.external-ecmascript.js~Int32Array",
+    "packages/.external-ecmascript.js~Int32Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~int8array",
+    "packages/.external-ecmascript.js~int8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
-    "node_modules/.external-ecmascript.js~Int8Array",
+    "packages/.external-ecmascript.js~Int8Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~internalerror",
+    "packages/.external-ecmascript.js~internalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
-    "node_modules/.external-ecmascript.js~InternalError",
+    "packages/.external-ecmascript.js~InternalError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~json",
+    "packages/.external-ecmascript.js~json",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
-    "node_modules/.external-ecmascript.js~JSON",
+    "packages/.external-ecmascript.js~JSON",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~map",
+    "packages/.external-ecmascript.js~map",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
-    "node_modules/.external-ecmascript.js~Map",
+    "packages/.external-ecmascript.js~Map",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~nan",
+    "packages/.external-ecmascript.js~nan",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
-    "node_modules/.external-ecmascript.js~NaN",
+    "packages/.external-ecmascript.js~NaN",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~number",
+    "packages/.external-ecmascript.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "node_modules/.external-ecmascript.js~Number",
+    "packages/.external-ecmascript.js~Number",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~object",
+    "packages/.external-ecmascript.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "node_modules/.external-ecmascript.js~Object",
+    "packages/.external-ecmascript.js~Object",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~promise",
+    "packages/.external-ecmascript.js~promise",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-    "node_modules/.external-ecmascript.js~Promise",
+    "packages/.external-ecmascript.js~Promise",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~proxy",
+    "packages/.external-ecmascript.js~proxy",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
-    "node_modules/.external-ecmascript.js~Proxy",
+    "packages/.external-ecmascript.js~Proxy",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~rangeerror",
+    "packages/.external-ecmascript.js~rangeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
-    "node_modules/.external-ecmascript.js~RangeError",
+    "packages/.external-ecmascript.js~RangeError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~referenceerror",
+    "packages/.external-ecmascript.js~referenceerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
-    "node_modules/.external-ecmascript.js~ReferenceError",
+    "packages/.external-ecmascript.js~ReferenceError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~reflect",
+    "packages/.external-ecmascript.js~reflect",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
-    "node_modules/.external-ecmascript.js~Reflect",
+    "packages/.external-ecmascript.js~Reflect",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~regexp",
+    "packages/.external-ecmascript.js~regexp",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
-    "node_modules/.external-ecmascript.js~RegExp",
+    "packages/.external-ecmascript.js~RegExp",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~set",
+    "packages/.external-ecmascript.js~set",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
-    "node_modules/.external-ecmascript.js~Set",
+    "packages/.external-ecmascript.js~Set",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~string",
+    "packages/.external-ecmascript.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "node_modules/.external-ecmascript.js~String",
+    "packages/.external-ecmascript.js~String",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~symbol",
+    "packages/.external-ecmascript.js~symbol",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
-    "node_modules/.external-ecmascript.js~Symbol",
+    "packages/.external-ecmascript.js~Symbol",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~syntaxerror",
+    "packages/.external-ecmascript.js~syntaxerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
-    "node_modules/.external-ecmascript.js~SyntaxError",
+    "packages/.external-ecmascript.js~SyntaxError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~typeerror",
+    "packages/.external-ecmascript.js~typeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
-    "node_modules/.external-ecmascript.js~TypeError",
+    "packages/.external-ecmascript.js~TypeError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~urierror",
+    "packages/.external-ecmascript.js~urierror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
-    "node_modules/.external-ecmascript.js~URIError",
+    "packages/.external-ecmascript.js~URIError",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~uint16array",
+    "packages/.external-ecmascript.js~uint16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
-    "node_modules/.external-ecmascript.js~Uint16Array",
+    "packages/.external-ecmascript.js~Uint16Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~uint32array",
+    "packages/.external-ecmascript.js~uint32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
-    "node_modules/.external-ecmascript.js~Uint32Array",
+    "packages/.external-ecmascript.js~Uint32Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~uint8array",
+    "packages/.external-ecmascript.js~uint8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
-    "node_modules/.external-ecmascript.js~Uint8Array",
+    "packages/.external-ecmascript.js~Uint8Array",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~uint8clampedarray",
+    "packages/.external-ecmascript.js~uint8clampedarray",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
-    "node_modules/.external-ecmascript.js~Uint8ClampedArray",
+    "packages/.external-ecmascript.js~Uint8ClampedArray",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~weakmap",
+    "packages/.external-ecmascript.js~weakmap",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-    "node_modules/.external-ecmascript.js~WeakMap",
+    "packages/.external-ecmascript.js~WeakMap",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~weakset",
+    "packages/.external-ecmascript.js~weakset",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
-    "node_modules/.external-ecmascript.js~WeakSet",
+    "packages/.external-ecmascript.js~WeakSet",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~boolean",
+    "packages/.external-ecmascript.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "node_modules/.external-ecmascript.js~boolean",
+    "packages/.external-ecmascript.js~boolean",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~function",
+    "packages/.external-ecmascript.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "node_modules/.external-ecmascript.js~function",
+    "packages/.external-ecmascript.js~function",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~null",
+    "packages/.external-ecmascript.js~null",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
-    "node_modules/.external-ecmascript.js~null",
+    "packages/.external-ecmascript.js~null",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~number",
+    "packages/.external-ecmascript.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "node_modules/.external-ecmascript.js~number",
+    "packages/.external-ecmascript.js~number",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~object",
+    "packages/.external-ecmascript.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "node_modules/.external-ecmascript.js~object",
+    "packages/.external-ecmascript.js~object",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~string",
+    "packages/.external-ecmascript.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "node_modules/.external-ecmascript.js~string",
+    "packages/.external-ecmascript.js~string",
     "external"
   ],
   [
-    "node_modules/.external-ecmascript.js~undefined",
+    "packages/.external-ecmascript.js~undefined",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
-    "node_modules/.external-ecmascript.js~undefined",
+    "packages/.external-ecmascript.js~undefined",
     "external"
   ],
   [
-    "node_modules/message/message.js",
-    "file/node_modules/message/message.js.html",
-    "node_modules/message/message.js",
+    "packages/message/message.js",
+    "file/packages/message/message.js.html",
+    "packages/message/message.js",
     "file"
   ],
   [
-    "node_modules/message/message.js~message#body",
-    "class/node_modules/message/message.js~Message.html#instance-get-body",
-    "node_modules/message/message.js~Message#body",
+    "packages/message/message.js~message#body",
+    "class/packages/message/message.js~Message.html#instance-get-body",
+    "packages/message/message.js~Message#body",
     "member"
   ],
   [
-    "node_modules/message/message.js~message#body",
-    "class/node_modules/message/message.js~Message.html#instance-set-body",
-    "node_modules/message/message.js~Message#body",
+    "packages/message/message.js~message#body",
+    "class/packages/message/message.js~Message.html#instance-set-body",
+    "packages/message/message.js~Message#body",
     "member"
   ],
   [
-    "node_modules/message/message.js~message#constructor",
-    "class/node_modules/message/message.js~Message.html#instance-constructor-constructor",
-    "node_modules/message/message.js~Message#constructor",
+    "packages/message/message.js~message#constructor",
+    "class/packages/message/message.js~Message.html#instance-constructor-constructor",
+    "packages/message/message.js~Message#constructor",
     "method"
   ],
   [
-    "node_modules/message/message.js~message#data",
-    "class/node_modules/message/message.js~Message.html#instance-get-data",
-    "node_modules/message/message.js~Message#data",
+    "packages/message/message.js~message#data",
+    "class/packages/message/message.js~Message.html#instance-get-data",
+    "packages/message/message.js~Message#data",
     "member"
   ],
   [
-    "node_modules/message/message.js~message#headers",
-    "class/node_modules/message/message.js~Message.html#instance-get-headers",
-    "node_modules/message/message.js~Message#headers",
+    "packages/message/message.js~message#headers",
+    "class/packages/message/message.js~Message.html#instance-get-headers",
+    "packages/message/message.js~Message#headers",
     "member"
   ],
   [
-    "node_modules/message/message.js~message#scheme",
-    "class/node_modules/message/message.js~Message.html#instance-get-scheme",
-    "node_modules/message/message.js~Message#scheme",
+    "packages/message/message.js~message#scheme",
+    "class/packages/message/message.js~Message.html#instance-get-scheme",
+    "packages/message/message.js~Message#scheme",
     "member"
   ],
   [
-    "node_modules/message/message.js~message.fromdata",
-    "class/node_modules/message/message.js~Message.html#static-method-fromData",
-    "node_modules/message/message.js~Message.fromData",
+    "packages/message/message.js~message.fromdata",
+    "class/packages/message/message.js~Message.html#static-method-fromData",
+    "packages/message/message.js~Message.fromData",
     "method"
   ],
   [
-    "node_modules/message/message.js~message.schemes",
-    "class/node_modules/message/message.js~Message.html#static-get-schemes",
-    "node_modules/message/message.js~Message.schemes",
+    "packages/message/message.js~message.schemes",
+    "class/packages/message/message.js~Message.html#static-get-schemes",
+    "packages/message/message.js~Message.schemes",
     "member"
   ],
   [
-    "node_modules/message/message.js~scheme",
+    "packages/message/message.js~scheme",
     "typedef/index.html#static-typedef-Scheme",
-    "node_modules/message/message.js~Scheme",
+    "packages/message/message.js~Scheme",
     "typedef"
   ],
   [
-    "node_modules/service-registry/service-registry.js",
-    "file/node_modules/service-registry/service-registry.js.html",
-    "node_modules/service-registry/service-registry.js",
+    "packages/service-registry/service-registry.js",
+    "file/packages/service-registry/service-registry.js.html",
+    "packages/service-registry/service-registry.js",
     "file"
   ],
   [
-    "node_modules/service-registry/service-registry.js~serviceregistry#constructor",
-    "class/node_modules/service-registry/service-registry.js~ServiceRegistry.html#instance-constructor-constructor",
-    "node_modules/service-registry/service-registry.js~ServiceRegistry#constructor",
+    "packages/service-registry/service-registry.js~serviceregistry#constructor",
+    "class/packages/service-registry/service-registry.js~ServiceRegistry.html#instance-constructor-constructor",
+    "packages/service-registry/service-registry.js~ServiceRegistry#constructor",
     "method"
   ]
 ]

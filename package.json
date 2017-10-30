@@ -14,8 +14,9 @@
   "author": "Aaron Levine <ald.levine@gmail.com>",
   "main": "index.js",
   "scripts": {
+    "bootstrap": "symlink-dir packages packages/node_modules/@the-architect",
     "build": "node ./lib/compose.js build",
-    "docs": "esdoc",
+    "docs": "node ./lib/compose.js docs",
     "pkgupdate": "node ./lib/compose.js pkgupdate",
     "precommit": "npm run build -s",
     "test": "nyc ava -v"
@@ -26,6 +27,12 @@
       "npm run docs && echo",
       "npm run pkgupdate && echo",
       "git add README.md docs package.json '**/package.json'"
+    ],
+    "docs": [
+      "rimraf docs",
+      "rimraf packages/node_modules",
+      "esdoc",
+      "npm run bootstrap"
     ],
     "pkgupdate": [
       "node ./lib/update-pkgjson.js ./packages/node_modules",
@@ -40,14 +47,6 @@
     "message",
     "broker"
   ],
-  "nyc": {
-    "exclude": [
-      "!packages/node_modules/**"
-    ],
-    "include": [
-      "packages/node_modules/**"
-    ]
-  },
   "dependencies": {
     "fs-extra": "^4.0.2",
     "uuid": "^3.1.0"

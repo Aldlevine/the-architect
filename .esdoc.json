@@ -1,5 +1,5 @@
 {
-  "source": "./packages/node_modules/",
+  "source": "./packages",
   "destination": "./docs",
   "plugins": [
     {"name": "esdoc-node"},
