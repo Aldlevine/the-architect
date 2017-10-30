@@ -26,7 +26,7 @@
       "nyc ava && echo",
       "npm run docs && echo",
       "npm run pkgupdate && echo",
-      "git add README.md docs package.json '**/package.json'"
+      "git add README.md docs package.json 'packages/**/package.json'"
     ],
     "docs": [
       "rimraf docs",
@@ -35,7 +35,7 @@
       "npm run bootstrap"
     ],
     "pkgupdate": [
-      "node ./lib/update-pkgjson.js ./packages/node_modules",
+      "node ./lib/update-pkgjson.js ./packages",
       "format-package -w"
     ]
   },
