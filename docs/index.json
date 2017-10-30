@@ -917,8 +917,177 @@
   {
     "__docId__": 63,
     "kind": "file",
+    "name": "packages/message-broker/message-broker.js",
+    "content": "const UUID = require('uuid');\nconst {Server} = require('net');\n\nconst ServiceRegistry = require('@the-architect/service-registry');\n\n/** A class representing a message broker */\nmodule.exports = class MessageBroker\n{\n  /**\n   * Creates a message broker.\n   * @return {MessageBroker}\n   */\n  constructor ({\n    server = new Server(),\n  }={})\n  {\n    /** The server instance */\n    this._server = server;\n\n    this._initEvents();\n  }\n\n  _initEvents ()\n  {\n    const server = this._server;\n\n    server.on('connection', (connection) => {\n      console.log('connection!');\n    });\n  }\n\n  listen (...args)\n  {\n    return this._server.listen(...args);\n  }\n}\n",
+    "static": true,
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/message-broker/message-broker.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "name": "UUID",
+    "memberof": "packages/message-broker/message-broker.js",
+    "static": true,
+    "longname": "packages/message-broker/message-broker.js~UUID",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/packages/message-broker/message-broker.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "Server",
+    "memberof": "packages/message-broker/message-broker.js",
+    "static": true,
+    "longname": "packages/message-broker/message-broker.js~Server",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/packages/message-broker/message-broker.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "variable",
+    "name": "ServiceRegistry",
+    "memberof": "packages/message-broker/message-broker.js",
+    "static": true,
+    "longname": "packages/message-broker/message-broker.js~ServiceRegistry",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/packages/message-broker/message-broker.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "class",
+    "name": "MessageBroker",
+    "memberof": "packages/message-broker/message-broker.js",
+    "static": true,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker",
+    "access": "public",
+    "export": true,
+    "importPath": "the-architect/packages/message-broker/message-broker.js",
+    "importStyle": "MessageBroker",
+    "description": "A class representing a message broker",
+    "lineNumber": 7,
+    "interface": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#constructor",
+    "access": "public",
+    "description": "Creates a message broker.",
+    "lineNumber": 13,
+    "return": {
+      "nullable": null,
+      "types": [
+        "MessageBroker"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "member",
+    "name": "_server",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_server",
+    "access": "private",
+    "description": "The server instance",
+    "lineNumber": 18,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "_initEvents",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_initEvents",
+    "access": "private",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "ignore": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "listen",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#listen",
+    "access": "public",
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "file",
     "name": "packages/service-registry/service-registry.js",
-    "content": "const UUID = require('uuid/v4');\nconst net = require('net');\nconst Message = require('@the-architect/message');\n\n/** A class representing a service registry. */\nmodule.exports = class ServiceRegistry\n{\n  /**\n   * Creates a service registry.\n   * @return {ServiceRegistry}\n   */\n  constructor ()\n  {\n  }\n}\n",
+    "content": "const UUID = require('uuid/v4');\nconst Message = require('@the-architect/message');\n\n/** A class representing a service registry. */\nmodule.exports = class ServiceRegistry\n{\n  /**\n   * Creates a service registry.\n   * @return {ServiceRegistry}\n   */\n  constructor ()\n  {\n  }\n}\n",
     "static": true,
     "longname": "/mnt/storage/Documents/Projects/the-architect/packages/service-registry/service-registry.js",
     "access": "public",
@@ -926,7 +1095,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 64,
+    "__docId__": 73,
     "kind": "variable",
     "name": "UUID",
     "memberof": "packages/service-registry/service-registry.js",
@@ -946,12 +1115,12 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 74,
     "kind": "variable",
-    "name": "net",
+    "name": "Message",
     "memberof": "packages/service-registry/service-registry.js",
     "static": true,
-    "longname": "packages/service-registry/service-registry.js~net",
+    "longname": "packages/service-registry/service-registry.js~Message",
     "access": "public",
     "export": false,
     "importPath": "the-architect/packages/service-registry/service-registry.js",
@@ -966,27 +1135,7 @@
     }
   },
   {
-    "__docId__": 66,
-    "kind": "variable",
-    "name": "Message",
-    "memberof": "packages/service-registry/service-registry.js",
-    "static": true,
-    "longname": "packages/service-registry/service-registry.js~Message",
-    "access": "public",
-    "export": false,
-    "importPath": "the-architect/packages/service-registry/service-registry.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 3,
-    "ignore": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 67,
+    "__docId__": 75,
     "kind": "class",
     "name": "ServiceRegistry",
     "memberof": "packages/service-registry/service-registry.js",
@@ -997,11 +1146,11 @@
     "importPath": "the-architect/packages/service-registry/service-registry.js",
     "importStyle": "ServiceRegistry",
     "description": "A class representing a service registry.",
-    "lineNumber": 6,
+    "lineNumber": 5,
     "interface": false
   },
   {
-    "__docId__": 68,
+    "__docId__": 76,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "packages/service-registry/service-registry.js~ServiceRegistry",
@@ -1011,7 +1160,7 @@
     "longname": "packages/service-registry/service-registry.js~ServiceRegistry#constructor",
     "access": "public",
     "description": "Creates a service registry.",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "return": {
       "nullable": null,
       "types": [

@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "the-architect/packages/message-broker/message-broker.js~messagebroker",
+    "class/packages/message-broker/message-broker.js~MessageBroker.html",
+    "<span>MessageBroker</span> <span class=\"search-result-import-path\">the-architect/packages/message-broker/message-broker.js</span>",
+    "class"
+  ],
+  [
     "the-architect/packages/service-registry/service-registry.js~serviceregistry",
     "class/packages/service-registry/service-registry.js~ServiceRegistry.html",
     "<span>ServiceRegistry</span> <span class=\"search-result-import-path\">the-architect/packages/service-registry/service-registry.js</span>",
@@ -292,6 +298,24 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "packages/.external-ecmascript.js~undefined",
     "external"
+  ],
+  [
+    "packages/message-broker/message-broker.js",
+    "file/packages/message-broker/message-broker.js.html",
+    "packages/message-broker/message-broker.js",
+    "file"
+  ],
+  [
+    "packages/message-broker/message-broker.js~messagebroker#constructor",
+    "class/packages/message-broker/message-broker.js~MessageBroker.html#instance-constructor-constructor",
+    "packages/message-broker/message-broker.js~MessageBroker#constructor",
+    "method"
+  ],
+  [
+    "packages/message-broker/message-broker.js~messagebroker#listen",
+    "class/packages/message-broker/message-broker.js~MessageBroker.html#instance-method-listen",
+    "packages/message-broker/message-broker.js~MessageBroker#listen",
+    "method"
   ],
   [
     "packages/message/message.js",
