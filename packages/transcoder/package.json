@@ -1,0 +1,17 @@
+{
+  "name": "@the-architect/transcoder",
+  "version": "0.0.0",
+  "description": "The Architect Transcoder",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldlevine/the-architect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aldlevine/the-architect/issues"
+  },
+  "homepage": "https://github.com/Aldlevine/the-architect#readme",
+  "author": "Aaron Levine <ald.levine@gmail.com>",
+  "main": "transcoder.js",
+  "dependencies": {}
+}

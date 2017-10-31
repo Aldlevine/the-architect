@@ -13,8 +13,8 @@ module.exports = class Message
   /**
    * Creates a message.
    * @param {Scheme} scheme - The message scheme.
-   * @param {Object} headers - The message headers.
-   * @param {Object} body - The message body.
+   * @param {Object} [headers={}] - The message headers.
+   * @param {Object} [body={}] - The message body.
    * @return {Message}
    */
   constructor (scheme, headers={}, body={})
@@ -89,6 +89,13 @@ module.exports = class Message
   /**
    * A handy way to access different schemes without fear of typos.
    * @type {Map<string, Scheme>}
+   * @property {Scheme} PUB - The publish scheme.
+   * @property {Scheme} SUB - The subscribe scheme.
+   * @property {Scheme} REQ - The request scheme.
+   * @property {Scheme} RES - The response scheme.
+   * @property {Scheme} DIR - The direct message scheme.
+   * @property {Scheme} QUE - The service registry query scheme.
+   * @property {Scheme} SRV - The service registry announce scheme.
    */
   static get schemes ()
   {

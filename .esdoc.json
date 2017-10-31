@@ -4,6 +4,7 @@
   "plugins": [
     {"name": "esdoc-node"},
     {"name": "./lib/esdoc-require.js"},
+    {"name": "./lib/esdoc-external-node/Plugin.js", "option": {"enable": true}},
     {
       "name": "esdoc-standard-plugin",
       "option": {

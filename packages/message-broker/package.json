@@ -1,0 +1,21 @@
+{
+  "name": "@the-architect/message-broker",
+  "version": "0.0.0",
+  "description": "The Architect MessageBroker",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldlevine/the-architect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aldlevine/the-architect/issues"
+  },
+  "homepage": "https://github.com/Aldlevine/the-architect#readme",
+  "author": "Aaron Levine <ald.levine@gmail.com>",
+  "main": "message-broker.js",
+  "dependencies": {
+    "@the-architect/message": "0.0.0",
+    "@the-architect/service-registry": "0.0.0",
+    "uuid": "^3.1.0"
+  }
+}

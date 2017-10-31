@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Typedef | the-architect</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">packages/message-broker/message-broker.js | the-architect</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -38,91 +38,66 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">Typedef</h1>
-<div data-ice="summaries"><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Static Public Summary</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>A virtual type representing a message scheme.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
-<div data-ice="details"><h2 data-ice="title">Static Public </h2>
+<div class="content" data-ice="content"><h1 data-ice="title">packages/message-broker/message-broker.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const EventEmitter = require(&apos;events&apos;);
+const {Server} = require(&apos;net&apos;);
+const UUID = require(&apos;uuid&apos;);
 
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-typedef-Scheme">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">Scheme</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/packages/message/message.js.html#lineNumberundefined">source</a></span></span>
-    </span>
-  </h3>
+const ServiceRegistry = require(&apos;@the-architect/service-registry&apos;);
+const Message = require(&apos;@the-architect/message&apos;);
 
-  
-  
-  
-  <div data-ice="description"><p>A virtual type representing a message scheme.
-These should be retrieved from <span><a href="class/packages/message/message.js~Message.html#static-get-schemes">Message.schemes</a></span>.</p>
-</div>
+/**
+ * A class representing a message broker
+ * @extends {events~EventEmitter}
+ */
+module.exports = class MessageBroker extends EventEmitter
+{
+  /**
+   * Creates a message broker.
+   * @param {object} [opts={}] - The configuration options.
+   * @param {net~Server} [opts.server=new net.Server] - The server to attach the message broker to.
+   * @return {MessageBroker}
+   */
+  constructor ({
+    server = new Server(),
+    transcoder = null,
+  }={})
+  {
+    super();
+    /** The server instance */
+    this._server = server;
 
-  
+    this._initEvents();
+  }
 
-  <div data-ice="properties">
-</div>
+  /**
+   * A proxy to the {@link net~Server#listen} method on {@link MessageBroker#server}.
+   * @param {...object} [args] - The args that get passed to {@link net~Server#listen}.
+   */
+  listen (...args)
+  {
+    this._server.listen(...args);
+  }
 
-  
+  /**
+   * Gets the message broker&apos;s server
+   * @type {net~Server}
+   */
+  get server () {return this._server}
 
-  
+  /** Initializes the event listeners */
+  _initEvents ()
+  {
+    const server = this._server;
 
-  
+    const events = [&apos;close&apos;, &apos;connection&apos;, &apos;error&apos;, &apos;listening&apos;];
+    for (let event of events) {
+      server.on(event, (...args) =&gt; this.emit(event, ...args));
+    }
+  }
+}
+</code></pre>
 
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-</div>
 </div>
 
 <footer class="footer">

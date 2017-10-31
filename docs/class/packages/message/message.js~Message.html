@@ -33,6 +33,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#message-broker">message-broker</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/message-broker/message-broker.js~MessageBroker.html">MessageBroker</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#service-registry">service-registry</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/service-registry/service-registry.js~ServiceRegistry.html">ServiceRegistry</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#transcoder">transcoder</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/transcoder/transcoder.js~Transcoder.html">Transcoder</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -355,7 +356,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/packages/message/message.js.html#lineNumber93">source</a></span></span>
+      <span data-ice="source"><span><a href="file/packages/message/message.js.html#lineNumber100">source</a></span></span>
     </span>
   </h3>
 
@@ -367,7 +368,66 @@
 
   
 
-  <div data-ice="properties">
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Properties:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">PUB</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The publish scheme.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">SUB</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The subscribe scheme.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">REQ</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The request scheme.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">RES</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The response scheme.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">DIR</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The direct message scheme.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">QUE</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The service registry query scheme.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">SRV</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The service registry announce scheme.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
 </div>
 
   
@@ -510,14 +570,16 @@ This is intended for rebuilding a message after deserialization.</p>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">headers</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
-      <td data-ice="appendix"></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: {}</li></ul></td>
       <td data-ice="description"><p>The message headers.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">body</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
-      <td data-ice="appendix"></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: {}</li></ul></td>
       <td data-ice="description"><p>The message body.</p>
 </td>
     </tr>

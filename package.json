@@ -23,16 +23,18 @@
   },
   "compose": {
     "build": [
+      "eslint packages",
       "nyc ava && echo",
-      "npm run docs && echo",
-      "npm run pkgupdate && echo",
+      "npm run docs -s && echo",
+      "npm run pkgupdate -s && echo",
       "git add README.md docs package.json 'packages/**/package.json'"
     ],
     "docs": [
+      "node ./lib/esdoc-external-node/generate-api.js",
       "rimraf docs",
       "rimraf packages/node_modules",
       "esdoc",
-      "npm run bootstrap"
+      "npm run bootstrap -s"
     ],
     "pkgupdate": [
       "node ./lib/update-pkgjson.js ./packages",
@@ -59,10 +61,13 @@
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-node": "^1.0.2",
     "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^4.10.0",
     "format-package": "^4.0.2",
     "glob": "^7.1.2",
     "husky": "^0.14.3",
     "minimist": "^1.2.0",
-    "nyc": "^11.3.0"
+    "nyc": "^11.3.0",
+    "rimraf": "^2.6.2",
+    "symlink-dir": "^1.1.0"
   }
 }

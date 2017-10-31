@@ -1,7 +1,7 @@
 {
-  "coverage": "92%",
-  "expectCount": 25,
-  "actualCount": 23,
+  "coverage": "93.93%",
+  "expectCount": 33,
+  "actualCount": 31,
   "files": {
     "packages/message/message.js": {
       "expectCount": 13,
@@ -9,17 +9,22 @@
       "undocumentLines": []
     },
     "packages/message-broker/message-broker.js": {
-      "expectCount": 8,
-      "actualCount": 6,
-      "undocumentLines": [
-        23,
-        32
-      ]
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
     },
     "packages/service-registry/service-registry.js": {
       "expectCount": 4,
       "actualCount": 4,
       "undocumentLines": []
+    },
+    "packages/transcoder/transcoder.js": {
+      "expectCount": 5,
+      "actualCount": 3,
+      "undocumentLines": [
+        21,
+        22
+      ]
     }
   }
 }
