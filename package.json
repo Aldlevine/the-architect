@@ -15,31 +15,11 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "symlink-dir packages packages/node_modules/@the-architect",
-    "build": "node ./lib/compose.js build",
-    "docs": "node ./lib/compose.js docs",
-    "pkgupdate": "node ./lib/compose.js pkgupdate",
-    "precommit": "npm run build -s",
+    "build": "node ./scripts/build.js",
+    "docs": "node ./scripts/docs.js",
+    "pkgupdate": "node ./scripts/pkgupdate.js",
+    "precommit": "node ./scripts/precommit.js",
     "test": "nyc ava -v"
-  },
-  "compose": {
-    "build": [
-      "eslint packages",
-      "nyc ava && echo",
-      "npm run docs -s && echo",
-      "npm run pkgupdate -s && echo",
-      "git add README.md docs package.json 'packages/**/package.json'"
-    ],
-    "docs": [
-      "node ./lib/esdoc-external-node/generate-api.js",
-      "rimraf docs",
-      "rimraf packages/node_modules",
-      "esdoc",
-      "npm run bootstrap -s"
-    ],
-    "pkgupdate": [
-      "node ./lib/update-pkgjson.js ./packages",
-      "format-package -w"
-    ]
   },
   "keywords": [
     "microservice",
@@ -68,6 +48,7 @@
     "minimist": "^1.2.0",
     "nyc": "^11.3.0",
     "rimraf": "^2.6.2",
+    "shelljs": "^0.7.8",
     "symlink-dir": "^1.1.0"
   }
 }

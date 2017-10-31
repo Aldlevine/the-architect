@@ -1435,7 +1435,7 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~crypto~certificate#exportpublickey",
-    "https://nodejs.org/api/crypto.html#crypto_certificate_exportpublickey_spkac",
+    "https://nodejs.org/api/crypto.html#crypto_certificate_exportpublickey_spkac_encoding",
     "packages/.external-node.js~crypto~Certificate#exportPublicKey",
     "external"
   ],
@@ -1849,13 +1849,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~dgram~socket#bind",
-    "https://nodejs.org/api/dgram.html#dgram_socket_bind_port_address_callback",
+    "https://nodejs.org/api/dgram.html#dgram_socket_bind_options_callback",
     "packages/.external-node.js~dgram~Socket#bind",
     "external"
   ],
   [
     "packages/.external-node.js~dgram~socket#bind",
-    "https://nodejs.org/api/dgram.html#dgram_socket_bind_options_callback",
+    "https://nodejs.org/api/dgram.html#dgram_socket_bind_port_address_callback",
     "packages/.external-node.js~dgram~Socket#bind",
     "external"
   ],
@@ -2058,12 +2058,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "packages/.external-node.js~domain~domain#dispose",
-    "https://nodejs.org/api/domain.html#domain_domain_dispose",
-    "packages/.external-node.js~domain~Domain#dispose",
-    "external"
-  ],
-  [
     "packages/.external-node.js~domain~domain#enter",
     "https://nodejs.org/api/domain.html#domain_domain_enter",
     "packages/.external-node.js~domain~Domain#enter",
@@ -2131,13 +2125,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~events~eventemitter#listenercount",
-    "https://nodejs.org/api/events.html#events_emitter_listenercount_eventname",
+    "https://nodejs.org/api/events.html#events_eventemitter_listenercount_emitter_eventname",
     "packages/.external-node.js~events~EventEmitter#listenerCount",
     "external"
   ],
   [
     "packages/.external-node.js~events~eventemitter#listenercount",
-    "https://nodejs.org/api/events.html#events_eventemitter_listenercount_emitter_eventname",
+    "https://nodejs.org/api/events.html#events_emitter_listenercount_eventname",
     "packages/.external-node.js~events~EventEmitter#listenerCount",
     "external"
   ],
@@ -2647,13 +2641,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~fs~write",
-    "https://nodejs.org/api/fs.html#fs_fs_write_fd_buffer_offset_length_position_callback",
+    "https://nodejs.org/api/fs.html#fs_fs_write_fd_string_position_encoding_callback",
     "packages/.external-node.js~fs~write",
     "external"
   ],
   [
     "packages/.external-node.js~fs~write",
-    "https://nodejs.org/api/fs.html#fs_fs_write_fd_string_position_encoding_callback",
+    "https://nodejs.org/api/fs.html#fs_fs_write_fd_buffer_offset_length_position_callback",
     "packages/.external-node.js~fs~write",
     "external"
   ],
@@ -2691,6 +2685,18 @@ window.esdocSearchIndex = [
     "packages/.external-node.js~https~server",
     "https://nodejs.org/api/https.html#https_class_https_server",
     "packages/.external-node.js~https~Server",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~https~server#close",
+    "https://nodejs.org/api/https.html#https_server_close_callback",
+    "packages/.external-node.js~https~Server#close",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~https~server#listen",
+    "https://nodejs.org/api/https.html#https_server_listen",
+    "packages/.external-node.js~https~Server#listen",
     "external"
   ],
   [
@@ -2851,19 +2857,7 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~http~server#listen",
-    "https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback",
-    "packages/.external-node.js~http~Server#listen",
-    "external"
-  ],
-  [
-    "packages/.external-node.js~http~server#listen",
-    "https://nodejs.org/api/http.html#http_server_listen_path_callback",
-    "packages/.external-node.js~http~Server#listen",
-    "external"
-  ],
-  [
-    "packages/.external-node.js~http~server#listen",
-    "https://nodejs.org/api/http.html#http_server_listen_handle_callback",
+    "https://nodejs.org/api/http.html#http_server_listen",
     "packages/.external-node.js~http~Server#listen",
     "external"
   ],
@@ -3006,6 +3000,24 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~legacy_api~certificate#exportchallenge",
+    "https://nodejs.org/api/legacy_api.html#legacy_api_certificate_exportchallenge_spkac",
+    "packages/.external-node.js~legacy_api~Certificate#exportChallenge",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~legacy_api~certificate#exportpublickey",
+    "https://nodejs.org/api/legacy_api.html#legacy_api_certificate_exportpublickey_spkac",
+    "packages/.external-node.js~legacy_api~Certificate#exportPublicKey",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~legacy_api~certificate#verifyspkac",
+    "https://nodejs.org/api/legacy_api.html#legacy_api_certificate_verifyspkac_spkac",
+    "packages/.external-node.js~legacy_api~Certificate#verifySpkac",
+    "external"
+  ],
+  [
     "packages/.external-node.js~legacy_url_api~format",
     "https://nodejs.org/api/legacy_url_api.html#legacy_url_api_url_format_urlobject",
     "packages/.external-node.js~legacy_url_api~format",
@@ -3024,9 +3036,21 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~list_of_deprecated_apis~_debug",
+    "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0077:module_debug",
+    "packages/.external-node.js~list_of_deprecated_apis~_debug",
+    "external"
+  ],
+  [
     "packages/.external-node.js~list_of_deprecated_apis~_extend",
     "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0060:util_extend",
     "packages/.external-node.js~list_of_deprecated_apis~_extend",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~list_of_deprecated_apis~_makelong",
+    "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0080:path_makelong",
+    "packages/.external-node.js~list_of_deprecated_apis~_makeLong",
     "external"
   ],
   [
@@ -3204,6 +3228,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~list_of_deprecated_apis~parsereplkeyword",
+    "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0075:replserver_parsereplkeyword",
+    "packages/.external-node.js~list_of_deprecated_apis~parseREPLKeyword",
+    "external"
+  ],
+  [
     "packages/.external-node.js~list_of_deprecated_apis~print",
     "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0026:util_print",
     "packages/.external-node.js~list_of_deprecated_apis~print",
@@ -3237,6 +3267,12 @@ window.esdocSearchIndex = [
     "packages/.external-node.js~list_of_deprecated_apis~triggerid",
     "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0071:async_hooks_triggerid",
     "packages/.external-node.js~list_of_deprecated_apis~triggerId",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~list_of_deprecated_apis~turnoffeditormode",
+    "https://nodejs.org/api/list_of_deprecated_apis.html#list_of_deprecated_apis_dep0078:replserver_turnoffeditormode",
+    "packages/.external-node.js~list_of_deprecated_apis~turnOffEditorMode",
     "external"
   ],
   [
@@ -3552,6 +3588,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~path~tonamespacedpath",
+    "https://nodejs.org/api/path.html#path_path_tonamespacedpath_path",
+    "packages/.external-node.js~path~toNamespacedPath",
+    "external"
+  ],
+  [
     "packages/.external-node.js~performance_timing_api~performance",
     "https://nodejs.org/api/performance_timing_api.html#performance_timing_api_class_performance",
     "packages/.external-node.js~performance_timing_api~Performance",
@@ -3810,6 +3852,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~repl~replserver#clearbufferedcommand",
+    "https://nodejs.org/api/repl.html#repl_replserver_clearbufferedcommand",
+    "packages/.external-node.js~repl~REPLServer#clearBufferedCommand",
+    "external"
+  ],
+  [
     "packages/.external-node.js~repl~replserver#definecommand",
     "https://nodejs.org/api/repl.html#repl_replserver_definecommand_keyword_cmd",
     "packages/.external-node.js~repl~REPLServer#defineCommand",
@@ -3819,6 +3867,12 @@ window.esdocSearchIndex = [
     "packages/.external-node.js~repl~replserver#displayprompt",
     "https://nodejs.org/api/repl.html#repl_replserver_displayprompt_preservecursor",
     "packages/.external-node.js~repl~REPLServer#displayPrompt",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~repl~replserver#parsereplkeyword",
+    "https://nodejs.org/api/repl.html#repl_replserver_parsereplkeyword_keyword_rest",
+    "packages/.external-node.js~repl~REPLServer#parseREPLKeyword",
     "external"
   ],
   [
@@ -4099,13 +4153,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~stream~writable",
-    "https://nodejs.org/api/stream.html#stream_class_stream_writable",
+    "https://nodejs.org/api/stream.html#stream_constructor:newstream_writable_options",
     "packages/.external-node.js~stream~Writable",
     "external"
   ],
   [
     "packages/.external-node.js~stream~writable",
-    "https://nodejs.org/api/stream.html#stream_constructor:newstream_writable_options",
+    "https://nodejs.org/api/stream.html#stream_class_stream_writable",
     "packages/.external-node.js~stream~Writable",
     "external"
   ],
@@ -4405,7 +4459,7 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~tls~server#listen",
-    "https://nodejs.org/api/tls.html#tls_server_listen_port_hostname_callback",
+    "https://nodejs.org/api/tls.html#tls_server_listen",
     "packages/.external-node.js~tls~Server#listen",
     "external"
   ],
@@ -4489,13 +4543,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~tls~connect",
-    "https://nodejs.org/api/tls.html#tls_tls_connect_port_host_options_callback",
+    "https://nodejs.org/api/tls.html#tls_tls_connect_options_callback",
     "packages/.external-node.js~tls~connect",
     "external"
   ],
   [
     "packages/.external-node.js~tls~connect",
-    "https://nodejs.org/api/tls.html#tls_tls_connect_options_callback",
+    "https://nodejs.org/api/tls.html#tls_tls_connect_port_host_options_callback",
     "packages/.external-node.js~tls~connect",
     "external"
   ],
@@ -4602,6 +4656,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~util~isdeepstrictequal",
+    "https://nodejs.org/api/util.html#util_util_isdeepstrictequal_val1_val2",
+    "packages/.external-node.js~util~isDeepStrictEqual",
+    "external"
+  ],
+  [
     "packages/.external-node.js~util~promisify",
     "https://nodejs.org/api/util.html#util_util_promisify_original",
     "packages/.external-node.js~util~promisify",
@@ -4627,7 +4687,7 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~v8~setflagsfromstring",
-    "https://nodejs.org/api/v8.html#v8_v8_setflagsfromstring_string",
+    "https://nodejs.org/api/v8.html#v8_v8_setflagsfromstring_flags",
     "packages/.external-node.js~v8~setFlagsFromString",
     "external"
   ],
