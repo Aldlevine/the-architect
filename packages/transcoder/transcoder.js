@@ -17,6 +17,7 @@ module.exports = class Transcoder extends Duplex
     decoder = new PassThrough(),
   }={})
   {
+    super();
     this._encoder = encoder;
     this._decoder = decoder;
   }
