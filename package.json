@@ -23,12 +23,10 @@
     "docs": "npm run compose -s -- docs",
     "pkgupdate": "npm run compose -s -- pkgupdate",
     "precommit": "npm run compose -s -- precommit",
-    "test": "nyc ava -v"
+    "test": "npm run compose -s -- test"
   },
   "compose": {
     "build": [
-      "eslint packages",
-      "nyc ava",
       "npm run docs -s",
       "npm run pkgupdate -s"
     ],
@@ -45,12 +43,17 @@
     ],
     "precommit": [
       "git stash save -q --keep-index 'pre-commit stash'",
+      "npm run test -s",
       "npm run build -s",
       [
         "git reset -q --hard",
         "git stash pop -q --index",
         "git add README.md package.json packages/**/package.json"
       ]
+    ],
+    "test": [
+      "eslint packages",
+      "nyc ava"
     ]
   },
   "keywords": [
