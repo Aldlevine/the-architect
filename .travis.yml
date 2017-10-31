@@ -1,11 +1,19 @@
 language: node_js
 node_js:
-  - "node"
-  - "8"
+  - node
+  - '8'
+before_install:
+  - npm install -g greenkeeper-lockfile@1
 before_script:
+  - greenkeeper-lockfile-update
   - npm run bootstrap
+after_script:
+  - greenkeeper-lockfile-upload
 after_success:
-  - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
+  - "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
 cache:
   directories:
     - node_modules
+env:
+  global:
+    secure: d3xficggQgVTkRLHBQlMWblRDD0B5lZO6FlQEa9l3HozwvUZk+0Ebiu7MkLvWZXoTGa8hu/AaTpxequSgzCTgL5ylsRV2ntIJxcsc5/1UrIyzQmdIbxW3cQSjWsYlcOrd2SYogQL2Qc1L6gXQVxkWIkExXLWFgfO7A3LQ2EdPbE8GwToQE7qvXMciugm6+c/p5D8PZK9UUY+d0yfFaluZODM0TGwxHLxU3LRu3JdRXD+0IqK1GNBCBUnzJy8LSQ9kR5azOFZ/pALfqLMNICFyiJPIKIBp03x/s4dnllx0dfvi8jJ2wNtavdzsyJ4qtxL10knJJuCZIzKve5VEMzWthwmsuoLX51Iz3XZ/iMiit5QGePfzJC7xuGn94cqm1uqqlqOc10QLkKZD+eOFiOge/llRxFmsroePgO+wBtFCDoDU/vfSkVLnIPPm4i4NOHAbER/62R3YoImPhhAhgdC2xh9v9601V4joo7ZH5SM5pEAneTTd8kkVyCz7JNjhDoAS19D7bj0x0zrIMu3/hm2/j4xmKakwX7GmyiolYgYvmOcB1V/HJFGWfLvi0Tx2WwEkrWxislFBoybcG8Di8Lf3XI+ni1ycndjd7mcr9K1I4rJcjrcey040jYuTEOlmZ6fTgJJ/dFkrJ6HqVhyB2vffv9440sBpghE4IPJAVQQncA=
