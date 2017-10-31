@@ -1,10 +1,11 @@
 const shell = require('shelljs');
+let code = 0;
 
 for (let cmd of [
   'git stash save -q --keep-index "pre-commit stash"',
   `node ${__dirname}/build.js`
 ]) {
-  if (shell.exec(cmd).code) {
+  if (code = shell.exec(cmd).code) {
     break;
   }
 }
@@ -18,3 +19,5 @@ for (let cmd of [
     break;
   }
 }
+
+process.exit(code);

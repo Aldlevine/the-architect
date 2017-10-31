@@ -1,4 +1,5 @@
 const shell = require('shelljs');
+let code = 0;
 
 for (let cmd of [
   'npx eslint --color packages',
@@ -6,7 +7,9 @@ for (let cmd of [
   `node ${__dirname}/docs.js`,
   `node ${__dirname}/pkgupdate.js`
 ]) {
-  if (shell.exec(cmd).code) {
+  if (code = shell.exec(cmd).code) {
     break;
   }
 }
+
+process.exit(code);

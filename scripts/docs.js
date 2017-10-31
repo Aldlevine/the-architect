@@ -1,4 +1,5 @@
 const shell = require('shelljs');
+let code = 0;
 
 for (let cmd of [
   'node ./lib/esdoc-external-node/generate-api.js',
@@ -7,8 +8,9 @@ for (let cmd of [
   'npx esdoc',
   'npm run bootstrap -s'
 ]) {
-  if (shell.exec(cmd).code) {
+  if (code = shell.exec(cmd).code) {
     break;
   }
 }
 
+process.exit(code);
