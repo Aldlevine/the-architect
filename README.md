@@ -4,6 +4,8 @@
 
 # The Architect
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Aldlevine/the-architect.svg)](https://greenkeeper.io/)
+
 A service registry and message broker system.
 
 
