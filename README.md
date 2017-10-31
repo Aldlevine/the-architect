@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=master)](https://travis-ci.org/Aldlevine/the-architect)
-[![Coverage Status](https://coveralls.io/repos/github/Aldlevine/the-architect/badge.svg?branch=master)](https://coveralls.io/github/Aldlevine/the-architect?branch=master)
-[![Docs Status](https://rawgit.com/Aldlevine/the-architect/master/docs/badge.svg)](https://aldlevine.github.io/the-architect/source.html)
 
 # The Architect
 
+[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=master)](https://travis-ci.org/Aldlevine/the-architect)
+[![Coverage Status](https://coveralls.io/repos/github/Aldlevine/the-architect/badge.svg?branch=master)](https://coveralls.io/github/Aldlevine/the-architect?branch=master)
+[![Docs Status](https://rawgit.com/Aldlevine/the-architect/master/docs/badge.svg)](https://aldlevine.github.io/the-architect/source.html)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Aldlevine/the-architect.svg)](https://greenkeeper.io/)
 
 A service registry and message broker system.
