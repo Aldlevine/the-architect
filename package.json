@@ -12,14 +12,14 @@
   },
   "homepage": "https://github.com/Aldlevine/the-architect#readme",
   "author": "Aaron Levine <ald.levine@gmail.com>",
-  "main": "index.js",
   "bin": {
     "compose": "./lib/compose.js"
   },
+  "main": "index.js",
   "scripts": {
-    "compose": "node $npm_package_bin_compose",
     "bootstrap": "symlink-dir packages packages/node_modules/@the-architect",
     "build": "npm run compose -s -- build",
+    "compose": "node $npm_package_bin_compose",
     "docs": "npm run compose -s -- docs",
     "pkgupdate": "npm run compose -s -- pkgupdate",
     "precommit": "npm run compose -s -- precommit",

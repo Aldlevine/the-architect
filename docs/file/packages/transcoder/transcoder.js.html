@@ -51,7 +51,7 @@ module.exports = class Transcoder extends Duplex
   /**
    * Creates a transcoder.
    * @param {object} [opts={}] - The configuration options.
-   * @param {stream~Duplex} - The connected stream.
+   * @param {stream~Duplex} opts.stream - The connected stream.
    * @param {stream~Transform} [opts.encoder=new stream.PassThrough] - The encoding transform.
    * @param {stream~Transform} [opts.decoder=new stream.PassThrough] - The decoding transform.
    */
@@ -59,9 +59,17 @@ module.exports = class Transcoder extends Duplex
     stream,
     encoder = new PassThrough(),
     decoder = new PassThrough(),
-  }={}, opts = {writableObjectMode: true})
+  }={}, opts = {
+    writableObjectMode: true,
+    readableObjectMode: true,
+  })
   {
     super(opts);
+
+    if (!stream) throw TypeError(&apos;Expected stream option&apos;);
+
+    /** The connectied stream */
+    this._stream = stream;
 
     /** The encoding transform */
     this._encoder = encoder;
@@ -69,11 +77,19 @@ module.exports = class Transcoder extends Duplex
     /** The decoding transform */
     this._decoder = decoder;
 
-    /** The connectied stream */
-    this._stream = stream;
+    encoder.pipe(stream);
+    stream.pipe(decoder);
   }
 
-  
+  _read (size)
+  {
+    this.push(this._decoder.read(size));
+  }
+
+  _write (chunk, enc, cb)
+  {
+    this._encoder.write(chunk, enc, cb);
+  }
 }
 </code></pre>
 
