@@ -10,7 +10,7 @@ module.exports = class Transcoder extends Duplex
   /**
    * Creates a transcoder.
    * @param {object} [opts={}] - The configuration options.
-   * @param {stream~Duplex} - The connected stream.
+   * @param {stream~Duplex} opts.stream - The connected stream.
    * @param {stream~Transform} [opts.encoder=new stream.PassThrough] - The encoding transform.
    * @param {stream~Transform} [opts.decoder=new stream.PassThrough] - The decoding transform.
    */
