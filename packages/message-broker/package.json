@@ -16,6 +16,8 @@
   "dependencies": {
     "@the-architect/message": "0.0.0",
     "@the-architect/service-registry": "0.0.0",
+    "@the-architect/transcoder": "0.0.0",
+    "debug": "^3.1.0",
     "uuid": "^3.1.0"
   }
 }
