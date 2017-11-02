@@ -33,7 +33,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Scheme">Scheme</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#message-broker">message-broker</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/message-broker/message-broker.js~MessageBroker.html">MessageBroker</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#service-registry">service-registry</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/service-registry/service-registry.js~ServiceRegistry.html">ServiceRegistry</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#transcoder">transcoder</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/transcoder/transcoder.js~Transcoder.html">Transcoder</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#transcoder">transcoder</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/transcoder/json-transcoder.js~JSONTranscoder.html">JSONTranscoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/packages/transcoder/transcoder.js~Transcoder.html">Transcoder</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -102,7 +103,7 @@ Once connected, a service can begin sending and receiving messages from other
 services. The message broker identifies from the message headers the intended
 recipient service(s) and delivers the message.</p>
 <p>There are five primary messaging schemes: <strong>PUB/SUB</strong>, <strong>REQ/RES</strong>, <strong>DIR</strong>,
-<strong>QUE</strong>, and  <strong>SRV</strong>.</p>
+<strong>QUE</strong>, and  <strong>REG</strong>.</p>
 <ol>
 <li><strong>PUB/SUB</strong>: <em>publish / subscribe</em><ul>
 <li>This messaging scheme is intended for broadcasting messages to any service
@@ -148,10 +149,14 @@ service registry.</li>
 </li>
 </ul>
 </li>
-<li><strong>SRV</strong>: <em>service registry connect signal</em><ul>
-<li>This is a special message scheme that connects service registries together.</li>
-<li>The purpose of this is to enable multiple replicas of the service registry
-to share access to services.</li>
+<li><strong>REG</strong>: <em>register message</em><ul>
+<li>This is a special message scheme that gives the service registry info about
+the service.</li>
+<li>It should be the first message sent by any service worker.</li>
+<li>For a service that will accept requests {REQ} it must include the <code>uri</code>
+header with the service name.</li>
+<li>It can also, under special circumstances, be used to connect multiple
+service registries together.</li>
 </ul>
 </li>
 </ol>
@@ -166,7 +171,7 @@ to share access to services.</li>
 <li>RES</li>
 <li>DIR</li>
 <li>QUE</li>
-<li>SRV</li>
+<li>REG</li>
 </ul>
 </li>
 </ul>
@@ -180,7 +185,7 @@ for standard communication:<ul>
 <li><strong>tgt</strong>: The id of the target worker -- <em>only applicable to direct
 messages {DIR}</em></li>
 <li><strong>uri</strong>: The uri of the target service -- <em>only applicable for
-subscriptions and service requests {REQ, SUB}</em></li>
+subscriptions, service requests and register messages {REQ, SUB, REG}</em></li>
 <li><strong>req</strong>: The id of the request message that triggered a response -- <em>only
 applicable for service responses {RES}</em></li>
 <li><strong>tag</strong>: The subscription tag for the pub/sub scheme. -- <em>only applicable
@@ -249,24 +254,35 @@ for publish and subscribe messages {PUB, SUB}</em></li>
 &#x2502;     req: &apos;1bd0567e-8150-4f6b-935c-3b9b8aa05ad4&apos;, &#x2551;
 &#x2502;   },                                             &#x2551;
 &#x2502;   body: {                                        &#x2551;
-&#x2502;     greeting: &apos;Hello Mark Karx!&apos;                 &#x2551;
+&#x2502;     greeting: &apos;Hello Marl Karx!&apos;                 &#x2551;
 &#x2502;   }                                              &#x2551;
 &#x2502; }                                                &#x2551;
 &#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;
 &#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
 &#x2502; example direct message                           &#x2551;
 &#x2502; {                                                &#x2551;
-&#x2502;   headers: {                                     &#x2551;
 &#x2502;   scheme: &apos;DIR&apos;,                                 &#x2551;
+&#x2502;   headers: {                                     &#x2551;
 &#x2502;     id: &apos;5b51247d-6401-4fa0-ad46-5543b82482b3&apos;,  &#x2551;
 &#x2502;     src: &apos;b2ef6770-2fdb-4f5a-afce-6a1df455c418&apos;, &#x2551;
 &#x2502;     tgt: &apos;4faacdc9-bd31-410f-9a17-5e884d709f78&apos;, &#x2551;
 &#x2502;   },                                             &#x2551;
 &#x2502;   body: {                                        &#x2551;
-&#x2502;     body: {                                      &#x2551;
-&#x2502;       message: &apos;Here, take this&apos;,                &#x2551;
-&#x2502;       stuff: {}                                  &#x2551;
-&#x2502;     }                                            &#x2551;
+&#x2502;     message: &apos;Here, take this&apos;,                  &#x2551;
+&#x2502;     stuff: {}                                    &#x2551;
+&#x2502;   }                                              &#x2551;
+&#x2502; }                                                &#x2551;
+&#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;
+&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2556;
+&#x2502; example register message                         &#x2551;
+&#x2502; {                                                &#x2551;
+&#x2502;   scheme: &apos;REG&apos;,                                 &#x2551;
+&#x2502;   headers: {                                     &#x2551;
+&#x2502;     id: &apos;ac6d94e0-69b5-40f4-97b8-c82df9c4f176&apos;,  &#x2551;
+&#x2502;     src: &apos;b2ef6770-2fdb-4f5a-afce-6a1df455c418&apos;, &#x2551;
+&#x2502;     uri: &apos;greeter&apos;                               &#x2551;
+&#x2502;   },                                             &#x2551;
+&#x2502;   body: {                                        &#x2551;
 &#x2502;   }                                              &#x2551;
 &#x2502; }                                                &#x2551;
 &#x2558;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255D;</code>

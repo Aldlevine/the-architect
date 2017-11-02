@@ -99,7 +99,7 @@ services. The message broker identifies from the message headers the intended
 recipient service(s) and delivers the message.
 
 There are five primary messaging schemes: __PUB/SUB__, __REQ/RES__, __DIR__,
-__QUE__, and  __SRV__.
+__QUE__, and  __REG__.
 
 1. __PUB/SUB__: *publish / subscribe*
   - This messaging scheme is intended for broadcasting messages to any service
@@ -135,11 +135,14 @@ __QUE__, and  __SRV__.
     - The number of open requests for each service.
     - The average execution time of requests for each service.
     - A list of subscribers and their message criteria.
-5. __SRV__: *service registry connect signal*
-  - This is a special message scheme that connects service registries together.
-  - The purpose of this is to enable multiple replicas of the service registry
-    to share access to services.
-
+5. __REG__: *register message*
+  - This is a special message scheme that gives the service registry info about
+    the service.
+  - It should be the first message sent by any service worker.
+  - For a service that will accept requests {REQ} it must include the `uri`
+    header with the service name.
+  - It can also, under special circumstances, be used to connect multiple
+    service registries together.
 
 ### message
 
@@ -153,7 +156,7 @@ A message is a packet of data sent between services. It consists of 3 pieces:
     - RES
     - DIR
     - QUE
-    - SRV
+    - REG
 2. The message headers
   - This can be equated to http headers.
   - While any arbitrary headers are allowed, there a certain headers reserved
@@ -163,7 +166,7 @@ A message is a packet of data sent between services. It consists of 3 pieces:
     - __tgt__: The id of the target worker -- *only applicable to direct
       messages {DIR}*
     - __uri__: The uri of the target service -- *only applicable for
-      subscriptions and service requests {REQ, SUB}*
+      subscriptions, service requests and register messages {REQ, SUB, REG}*
     - __req__: The id of the request message that triggered a response -- *only
       applicable for service responses {RES}*
     - __tag__: The subscription tag for the pub/sub scheme. -- *only applicable
@@ -228,24 +231,35 @@ A message is a packet of data sent between services. It consists of 3 pieces:
 │     req: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4', ║
 │   },                                             ║
 │   body: {                                        ║
-│     greeting: 'Hello Mark Karx!'                 ║
+│     greeting: 'Hello Marl Karx!'                 ║
 │   }                                              ║
 │ }                                                ║
 ╘══════════════════════════════════════════════════╝
 ┌──────────────────────────────────────────────────╖
 │ example direct message                           ║
 │ {                                                ║
-│   headers: {                                     ║
 │   scheme: 'DIR',                                 ║
+│   headers: {                                     ║
 │     id: '5b51247d-6401-4fa0-ad46-5543b82482b3',  ║
 │     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║
 │     tgt: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║
 │   },                                             ║
 │   body: {                                        ║
-│     body: {                                      ║
-│       message: 'Here, take this',                ║
-│       stuff: {}                                  ║
-│     }                                            ║
+│     message: 'Here, take this',                  ║
+│     stuff: {}                                    ║
+│   }                                              ║
+│ }                                                ║
+╘══════════════════════════════════════════════════╝
+┌──────────────────────────────────────────────────╖
+│ example register message                         ║
+│ {                                                ║
+│   scheme: 'REG',                                 ║
+│   headers: {                                     ║
+│     id: 'ac6d94e0-69b5-40f4-97b8-c82df9c4f176',  ║
+│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║
+│     uri: 'greeter'                               ║
+│   },                                             ║
+│   body: {                                        ║
 │   }                                              ║
 │ }                                                ║
 ╘══════════════════════════════════════════════════╝

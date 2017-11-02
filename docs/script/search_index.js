@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "the-architect/packages/transcoder/json-transcoder.js~jsontranscoder",
+    "class/packages/transcoder/json-transcoder.js~JSONTranscoder.html",
+    "<span>JSONTranscoder</span> <span class=\"search-result-import-path\">the-architect/packages/transcoder/json-transcoder.js</span>",
+    "class"
+  ],
+  [
     "the-architect/packages/message/message.js~message",
     "class/packages/message/message.js~Message.html",
     "<span>Message</span> <span class=\"search-result-import-path\">the-architect/packages/message/message.js</span>",
@@ -343,13 +349,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~`crypto`_module_methods_and_properties~creatediffiehellman",
-    "https://nodejs.org/api/`crypto`_module_methods_and_properties.html#`crypto`_module_methods_and_properties_crypto_creatediffiehellman_primelength_generator",
+    "https://nodejs.org/api/`crypto`_module_methods_and_properties.html#`crypto`_module_methods_and_properties_crypto_creatediffiehellman_prime_primeencoding_generator_generatorencoding",
     "packages/.external-node.js~`crypto`_module_methods_and_properties~createDiffieHellman",
     "external"
   ],
   [
     "packages/.external-node.js~`crypto`_module_methods_and_properties~creatediffiehellman",
-    "https://nodejs.org/api/`crypto`_module_methods_and_properties.html#`crypto`_module_methods_and_properties_crypto_creatediffiehellman_prime_primeencoding_generator_generatorencoding",
+    "https://nodejs.org/api/`crypto`_module_methods_and_properties.html#`crypto`_module_methods_and_properties_crypto_creatediffiehellman_primelength_generator",
     "packages/.external-node.js~`crypto`_module_methods_and_properties~createDiffieHellman",
     "external"
   ],
@@ -1686,6 +1692,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "packages/.external-node.js~debug",
+    "https://github.com/visionmedia/debug#readme",
+    "packages/.external-node.js~debug",
+    "external"
+  ],
+  [
     "packages/.external-node.js~deprecated_apis~cryptostream",
     "https://nodejs.org/api/deprecated_apis.html#deprecated_apis_class_cryptostream",
     "packages/.external-node.js~deprecated_apis~CryptoStream",
@@ -2125,13 +2137,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~events~eventemitter#listenercount",
-    "https://nodejs.org/api/events.html#events_eventemitter_listenercount_emitter_eventname",
+    "https://nodejs.org/api/events.html#events_emitter_listenercount_eventname",
     "packages/.external-node.js~events~EventEmitter#listenerCount",
     "external"
   ],
   [
     "packages/.external-node.js~events~eventemitter#listenercount",
-    "https://nodejs.org/api/events.html#events_emitter_listenercount_eventname",
+    "https://nodejs.org/api/events.html#events_eventemitter_listenercount_emitter_eventname",
     "packages/.external-node.js~events~EventEmitter#listenerCount",
     "external"
   ],
@@ -2181,6 +2193,12 @@ window.esdocSearchIndex = [
     "packages/.external-node.js~events~eventemitter#setmaxlisteners",
     "https://nodejs.org/api/events.html#events_emitter_setmaxlisteners_n",
     "packages/.external-node.js~events~EventEmitter#setMaxListeners",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~fs-extra",
+    "https://github.com/jprichardson/node-fs-extra",
+    "packages/.external-node.js~fs-extra",
     "external"
   ],
   [
@@ -2641,13 +2659,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~fs~write",
-    "https://nodejs.org/api/fs.html#fs_fs_write_fd_string_position_encoding_callback",
+    "https://nodejs.org/api/fs.html#fs_fs_write_fd_buffer_offset_length_position_callback",
     "packages/.external-node.js~fs~write",
     "external"
   ],
   [
     "packages/.external-node.js~fs~write",
-    "https://nodejs.org/api/fs.html#fs_fs_write_fd_buffer_offset_length_position_callback",
+    "https://nodejs.org/api/fs.html#fs_fs_write_fd_string_position_encoding_callback",
     "packages/.external-node.js~fs~write",
     "external"
   ],
@@ -4201,13 +4219,13 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~stream~_destroy",
-    "https://nodejs.org/api/stream.html#stream_readable_destroy_err_callback",
+    "https://nodejs.org/api/stream.html#stream_writable_destroy_err_callback",
     "packages/.external-node.js~stream~_destroy",
     "external"
   ],
   [
     "packages/.external-node.js~stream~_destroy",
-    "https://nodejs.org/api/stream.html#stream_writable_destroy_err_callback",
+    "https://nodejs.org/api/stream.html#stream_readable_destroy_err_callback",
     "packages/.external-node.js~stream~_destroy",
     "external"
   ],
@@ -4537,7 +4555,7 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~tls~connect",
-    "https://nodejs.org/api/tls.html#tls_tls_connect_path_options_callback",
+    "https://nodejs.org/api/tls.html#tls_tls_connect_port_host_options_callback",
     "packages/.external-node.js~tls~connect",
     "external"
   ],
@@ -4549,7 +4567,7 @@ window.esdocSearchIndex = [
   ],
   [
     "packages/.external-node.js~tls~connect",
-    "https://nodejs.org/api/tls.html#tls_tls_connect_port_host_options_callback",
+    "https://nodejs.org/api/tls.html#tls_tls_connect_path_options_callback",
     "packages/.external-node.js~tls~connect",
     "external"
   ],
@@ -4665,6 +4683,12 @@ window.esdocSearchIndex = [
     "packages/.external-node.js~util~promisify",
     "https://nodejs.org/api/util.html#util_util_promisify_original",
     "packages/.external-node.js~util~promisify",
+    "external"
+  ],
+  [
+    "packages/.external-node.js~uuid",
+    "https://github.com/kelektiv/node-uuid#readme",
+    "packages/.external-node.js~uuid",
     "external"
   ],
   [
@@ -5040,6 +5064,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "packages/transcoder/json-transcoder.js",
+    "file/packages/transcoder/json-transcoder.js.html",
+    "packages/transcoder/json-transcoder.js",
+    "file"
+  ],
+  [
+    "packages/transcoder/json-transcoder.js~jsontranscoder.decoder",
+    "class/packages/transcoder/json-transcoder.js~JSONTranscoder.html#static-method-decoder",
+    "packages/transcoder/json-transcoder.js~JSONTranscoder.decoder",
+    "method"
+  ],
+  [
+    "packages/transcoder/json-transcoder.js~jsontranscoder.encoder",
+    "class/packages/transcoder/json-transcoder.js~JSONTranscoder.html#static-method-encoder",
+    "packages/transcoder/json-transcoder.js~JSONTranscoder.encoder",
+    "method"
+  ],
+  [
     "packages/transcoder/transcoder.js",
     "file/packages/transcoder/transcoder.js.html",
     "packages/transcoder/transcoder.js",
@@ -5049,6 +5091,18 @@ window.esdocSearchIndex = [
     "packages/transcoder/transcoder.js~transcoder#constructor",
     "class/packages/transcoder/transcoder.js~Transcoder.html#instance-constructor-constructor",
     "packages/transcoder/transcoder.js~Transcoder#constructor",
+    "method"
+  ],
+  [
+    "packages/transcoder/transcoder.js~transcoder.decoder",
+    "class/packages/transcoder/transcoder.js~Transcoder.html#static-method-decoder",
+    "packages/transcoder/transcoder.js~Transcoder.decoder",
+    "method"
+  ],
+  [
+    "packages/transcoder/transcoder.js~transcoder.encoder",
+    "class/packages/transcoder/transcoder.js~Transcoder.html#static-method-encoder",
+    "packages/transcoder/transcoder.js~Transcoder.encoder",
     "method"
   ]
 ]

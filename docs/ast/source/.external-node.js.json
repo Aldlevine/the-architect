@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 95229,
+  "end": 95447,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 2320,
+      "line": 2329,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 95229,
+    "end": 95447,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 2320,
+        "line": 2329,
         "column": 0
       }
     },
@@ -12398,6 +12398,54 @@
             "column": 2
           }
         }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n* @external {debug} https://github.com/visionmedia/debug#readme\n",
+        "start": 95229,
+        "end": 95299,
+        "loc": {
+          "start": {
+            "line": 2320,
+            "column": 0
+          },
+          "end": {
+            "line": 2322,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n* @external {fs-extra} https://github.com/jprichardson/node-fs-extra\n",
+        "start": 95300,
+        "end": 95375,
+        "loc": {
+          "start": {
+            "line": 2323,
+            "column": 0
+          },
+          "end": {
+            "line": 2325,
+            "column": 2
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n* @external {uuid} https://github.com/kelektiv/node-uuid#readme\n",
+        "start": 95376,
+        "end": 95446,
+        "loc": {
+          "start": {
+            "line": 2326,
+            "column": 0
+          },
+          "end": {
+            "line": 2328,
+            "column": 2
+          }
+        }
       }
     ]
   },
@@ -24766,6 +24814,54 @@
         },
         "end": {
           "line": 2319,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n* @external {debug} https://github.com/visionmedia/debug#readme\n",
+      "start": 95229,
+      "end": 95299,
+      "loc": {
+        "start": {
+          "line": 2320,
+          "column": 0
+        },
+        "end": {
+          "line": 2322,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n* @external {fs-extra} https://github.com/jprichardson/node-fs-extra\n",
+      "start": 95300,
+      "end": 95375,
+      "loc": {
+        "start": {
+          "line": 2323,
+          "column": 0
+        },
+        "end": {
+          "line": 2325,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n* @external {uuid} https://github.com/kelektiv/node-uuid#readme\n",
+      "start": 95376,
+      "end": 95446,
+      "loc": {
+        "start": {
+          "line": 2326,
+          "column": 0
+        },
+        "end": {
+          "line": 2328,
           "column": 2
         }
       }
@@ -37141,6 +37237,54 @@
       }
     },
     {
+      "type": "CommentBlock",
+      "value": "*\n* @external {debug} https://github.com/visionmedia/debug#readme\n",
+      "start": 95229,
+      "end": 95299,
+      "loc": {
+        "start": {
+          "line": 2320,
+          "column": 0
+        },
+        "end": {
+          "line": 2322,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n* @external {fs-extra} https://github.com/jprichardson/node-fs-extra\n",
+      "start": 95300,
+      "end": 95375,
+      "loc": {
+        "start": {
+          "line": 2323,
+          "column": 0
+        },
+        "end": {
+          "line": 2325,
+          "column": 2
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n* @external {uuid} https://github.com/kelektiv/node-uuid#readme\n",
+      "start": 95376,
+      "end": 95446,
+      "loc": {
+        "start": {
+          "line": 2326,
+          "column": 0
+        },
+        "end": {
+          "line": 2328,
+          "column": 2
+        }
+      }
+    },
+    {
       "type": {
         "label": "eof",
         "beforeExpr": false,
@@ -37153,15 +37297,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 95229,
-      "end": 95229,
+      "start": 95447,
+      "end": 95447,
       "loc": {
         "start": {
-          "line": 2320,
+          "line": 2329,
           "column": 0
         },
         "end": {
-          "line": 2320,
+          "line": 2329,
           "column": 0
         }
       }

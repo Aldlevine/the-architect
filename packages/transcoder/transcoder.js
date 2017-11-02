@@ -9,16 +9,11 @@ module.exports = class Transcoder extends Duplex
 {
   /**
    * Creates a transcoder.
-   * @param {object} [opts={}] - The configuration options.
-   * @param {stream~Duplex} opts.stream - The connected stream.
-   * @param {stream~Transform} [opts.encoder=new stream.PassThrough] - The encoding transform.
-   * @param {stream~Transform} [opts.decoder=new stream.PassThrough] - The decoding transform.
+   * @param {stream~Duplex} stream - The connected stream.
+   * @param {object} [opts={writableObjectMode: true, readableObjectMode: true}]
+   * opts - The opts to pass into the {@link stream~Duplex} constructor.
    */
-  constructor ({
-    stream,
-    encoder = new PassThrough(),
-    decoder = new PassThrough(),
-  }={}, opts = {
+  constructor (stream, opts = {
     writableObjectMode: true,
     readableObjectMode: true,
   })
@@ -31,13 +26,34 @@ module.exports = class Transcoder extends Duplex
     this._stream = stream;
 
     /** The encoding transform */
-    this._encoder = encoder;
+    const encoder = this._encoder = this.constructor.encoder();
 
     /** The decoding transform */
-    this._decoder = decoder;
+    const decoder = this._decoder = this.constructor.decoder();
 
-    encoder.pipe(stream);
-    stream.pipe(decoder);
+    stream.on('data', (...args) => decoder.write(...args));
+    encoder.on('data', (...args) => stream.write(...args));
+    decoder.on('data', (...args) => this.emit('data', ...args));
+  }
+
+  /**
+   * @abstract
+   * Gets a new encoder
+   * @returns {stream~Transform}
+   */
+  static encoder ()
+  {
+    return new PassThrough();
+  }
+
+  /**
+   * @abstract
+   * Gets a new decoder
+   * @returns {stream~Transform}
+   */
+  static decoder ()
+  {
+    return new PassThrough();
   }
 
   /**

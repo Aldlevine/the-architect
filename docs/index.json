@@ -9841,17 +9841,53 @@
   },
   {
     "__docId__": 822,
+    "kind": "external",
+    "name": "debug",
+    "externalLink": "https://github.com/visionmedia/debug#readme",
+    "memberof": "packages/.external-node.js",
+    "static": true,
+    "longname": "packages/.external-node.js~debug",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 823,
+    "kind": "external",
+    "name": "fs-extra",
+    "externalLink": "https://github.com/jprichardson/node-fs-extra",
+    "memberof": "packages/.external-node.js",
+    "static": true,
+    "longname": "packages/.external-node.js~fs-extra",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 824,
+    "kind": "external",
+    "name": "uuid",
+    "externalLink": "https://github.com/kelektiv/node-uuid#readme",
+    "memberof": "packages/.external-node.js",
+    "static": true,
+    "longname": "packages/.external-node.js~uuid",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 825,
     "kind": "file",
     "name": "packages/message/message.js",
     "content": "const UUID = require('uuid/v4');\n\n/**\n * A virtual type representing a message scheme.\n * These should be retrieved from {@link Message.schemes}.\n * @typedef {number|string} Scheme\n */\n\n/** A class representing a message. */\nmodule.exports = class Message\n{\n\n  /**\n   * Creates a message.\n   * @param {Scheme} scheme - The message scheme.\n   * @param {Object} [headers={}] - The message headers.\n   * @param {Object} [body={}] - The message body.\n   * @return {Message}\n   */\n  constructor (scheme, headers={}, body={})\n  {\n    // validate scheme\n    if (!(scheme in Message.schemes)) {\n      throw new TypeError(`\"${scheme}\" is not a valid message scheme.`);\n    }\n\n    // validate required headers\n    const requiredHeaders = Message._requiredHeaders[scheme];\n    for (let header of requiredHeaders) {\n      if (!(header in headers)) {\n        throw new TypeError(`Excpected \"${header}\" header for \"${scheme}\" message.`);\n      }\n    }\n\n    // validate reserved headers\n    const reservedHeaders = Message._reservedHeaders[scheme];\n    for (let header of reservedHeaders) {\n      if (header in headers) {\n        throw new TypeError(`The \"${header}\" header is reserved for \"${scheme}\" messages.`);\n      }\n    }\n\n    /** packs data in array for smaller package */\n    this._data = [scheme, {...headers, id: UUID()}, body];\n  }\n\n  /**\n   * Creates a message directly from the data component of another message.\n   * This is intended for rebuilding a message after deserialization.\n   * @param {Array} data - The message data.\n   * @return {Message} The message represented by the data.\n   */\n  static fromData (data)\n  {\n    const msg = Object.create(Message.prototype);\n    msg._data = data;\n    return msg;\n  }\n\n  /**\n   * Gets the message data.\n   * @type {Array<Scheme, Object, Object>}\n   */\n  get data () {return this._data}\n\n  /**\n   * Gets the message scheme.\n   * @type {Scheme}\n   */\n  get scheme () {return this._data[0]}\n\n  /**\n   * Gets the message headers.\n   * @type {Object}\n   */\n  get headers () {return this._data[1]}\n\n  /**\n   * Gets the message body.\n   * @type {Object}\n   */\n  get body () {return this._data[2]}\n  /**\n   * Sets the message body.\n   * @param {Object} _\n   */\n  set body (v) {this._data[2] = v}\n\n  /**\n   * A handy way to access different schemes without fear of typos.\n   * @type {Map<string, Scheme>}\n   * @property {Scheme} PUB - The publish scheme.\n   * @property {Scheme} SUB - The subscribe scheme.\n   * @property {Scheme} REQ - The request scheme.\n   * @property {Scheme} RES - The response scheme.\n   * @property {Scheme} DIR - The direct message scheme.\n   * @property {Scheme} QUE - The service registry query scheme.\n   * @property {Scheme} SRV - The service registry announce scheme.\n   */\n  static get schemes ()\n  {\n    return {\n      get PUB () {return 'PUB'},\n      get SUB () {return 'SUB'},\n      get REQ () {return 'REQ'},\n      get RES () {return 'RES'},\n      get DIR () {return 'DIR'},\n      get QUE () {return 'QUE'},\n      get SRV () {return 'SRV'},\n    }\n  }\n\n  /**\n   * The headers that are required for each message scheme.\n   * @return {Map<Scheme, string[]>}\n   */\n  static get _requiredHeaders ()\n  {\n    const {PUB, SUB, REQ, RES, DIR, QUE, SRV} = Message.schemes;\n    return {\n      [PUB]: ['src', 'tag'],\n      [SUB]: ['src', 'tag'],\n      [REQ]: ['src', 'uri'],\n      [RES]: ['src', 'res'],\n      [DIR]: ['src', 'tgt'],\n      [QUE]: ['src'],\n      [SRV]: [],\n    }\n  }\n\n  /**\n   * The headers that are reserved for each message scheme.\n   * @return {Map<Scheme, string[]>}\n   */\n  static get _reservedHeaders ()\n  {\n    const {PUB, SUB, REQ, RES, DIR, QUE, SRV} = Message.schemes;\n    return {\n      [PUB]: ['id'],\n      [SUB]: ['id'],\n      [REQ]: ['id'],\n      [RES]: ['id'],\n      [DIR]: ['id'],\n      [QUE]: ['id'],\n      [SRV]: ['id'],\n    }\n  }\n}\n",
     "static": true,
-    "longname": "C:/Users/alevine/Documents/Projects/the-architect/packages/message/message.js",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/message/message.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 823,
+    "__docId__": 826,
     "kind": "variable",
     "name": "UUID",
     "memberof": "packages/message/message.js",
@@ -9871,7 +9907,7 @@
     }
   },
   {
-    "__docId__": 824,
+    "__docId__": 827,
     "kind": "typedef",
     "name": "Scheme",
     "memberof": "packages/message/message.js",
@@ -9889,7 +9925,7 @@
     }
   },
   {
-    "__docId__": 825,
+    "__docId__": 828,
     "kind": "class",
     "name": "Message",
     "memberof": "packages/message/message.js",
@@ -9904,7 +9940,7 @@
     "interface": false
   },
   {
-    "__docId__": 826,
+    "__docId__": 829,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "packages/message/message.js~Message",
@@ -9961,7 +9997,7 @@
     }
   },
   {
-    "__docId__": 827,
+    "__docId__": 830,
     "kind": "member",
     "name": "_data",
     "memberof": "packages/message/message.js~Message",
@@ -9978,7 +10014,7 @@
     }
   },
   {
-    "__docId__": 828,
+    "__docId__": 831,
     "kind": "method",
     "name": "fromData",
     "memberof": "packages/message/message.js~Message",
@@ -10011,7 +10047,7 @@
     }
   },
   {
-    "__docId__": 829,
+    "__docId__": 832,
     "kind": "get",
     "name": "data",
     "memberof": "packages/message/message.js~Message",
@@ -10032,7 +10068,7 @@
     }
   },
   {
-    "__docId__": 830,
+    "__docId__": 833,
     "kind": "get",
     "name": "scheme",
     "memberof": "packages/message/message.js~Message",
@@ -10053,7 +10089,7 @@
     }
   },
   {
-    "__docId__": 831,
+    "__docId__": 834,
     "kind": "get",
     "name": "headers",
     "memberof": "packages/message/message.js~Message",
@@ -10074,7 +10110,7 @@
     }
   },
   {
-    "__docId__": 832,
+    "__docId__": 835,
     "kind": "get",
     "name": "body",
     "memberof": "packages/message/message.js~Message",
@@ -10095,7 +10131,7 @@
     }
   },
   {
-    "__docId__": 833,
+    "__docId__": 836,
     "kind": "set",
     "name": "body",
     "memberof": "packages/message/message.js~Message",
@@ -10120,7 +10156,7 @@
     ]
   },
   {
-    "__docId__": 834,
+    "__docId__": 837,
     "kind": "get",
     "name": "schemes",
     "memberof": "packages/message/message.js~Message",
@@ -10213,7 +10249,7 @@
     }
   },
   {
-    "__docId__": 835,
+    "__docId__": 838,
     "kind": "get",
     "name": "_requiredHeaders",
     "memberof": "packages/message/message.js~Message",
@@ -10240,7 +10276,7 @@
     }
   },
   {
-    "__docId__": 836,
+    "__docId__": 839,
     "kind": "get",
     "name": "_reservedHeaders",
     "memberof": "packages/message/message.js~Message",
@@ -10267,18 +10303,18 @@
     }
   },
   {
-    "__docId__": 837,
+    "__docId__": 840,
     "kind": "file",
     "name": "packages/message-broker/message-broker.js",
-    "content": "const EventEmitter = require('events');\nconst {Server} = require('net');\nconst UUID = require('uuid');\n\nconst ServiceRegistry = require('@the-architect/service-registry');\nconst Message = require('@the-architect/message');\n\n/**\n * A class representing a message broker\n * @extends {events~EventEmitter}\n */\nmodule.exports = class MessageBroker extends EventEmitter\n{\n  /**\n   * Creates a message broker.\n   * @param {object} [opts={}] - The configuration options.\n   * @param {net~Server} [opts.server=new net.Server] - The server to attach the message broker to.\n   * @return {MessageBroker}\n   */\n  constructor ({\n    server = new Server(),\n    transcoder = null,\n  }={})\n  {\n    super();\n    /** The server instance */\n    this._server = server;\n\n    this._initEvents();\n  }\n\n  /**\n   * A proxy to the {@link net~Server#listen} method on {@link MessageBroker#server}.\n   * @param {...object} [args] - The args that get passed to {@link net~Server#listen}.\n   */\n  listen (...args)\n  {\n    this._server.listen(...args);\n  }\n\n  /**\n   * Gets the message broker's server\n   * @type {net~Server}\n   */\n  get server () {return this._server}\n\n  /** Initializes the event listeners */\n  _initEvents ()\n  {\n    const server = this._server;\n\n    const events = ['close', 'connection', 'error', 'listening'];\n    for (let event of events) {\n      server.on(event, (...args) => this.emit(event, ...args));\n    }\n  }\n}\n",
+    "content": "const EventEmitter = require('events');\nconst {Server} = require('net');\nconst UUID = require('uuid');\nconst ServiceRegistry = require('@the-architect/service-registry');\nconst Message = require('@the-architect/message');\nconst JSONTranscoder = require('@the-architect/transcoder/json-transcoder');\nconst log = require('debug')('@the-architect:message-broker');\n\n/**\n * A class representing a message broker\n * @extends {events~EventEmitter}\n */\nmodule.exports = class MessageBroker extends EventEmitter\n{\n  /**\n   * Creates a message broker.\n   * @param {object} opts - The configuration options.\n   * @param {net~Server} [opts.server=new net.Server] - The server to attach the message broker to.\n   * @param {#Transcoder} [transcoder=JSONTranscoder] - The transcoder.\n   * @return {MessageBroker}\n   */\n  constructor ({\n    server = new Server(),\n    transcoder = JSONTranscoder\n  }={})\n  {\n    super();\n\n    /** The server instance */\n    this._server = server;\n\n    /** The transcoder constructor */\n    this._transcoder = transcoder;\n\n    this._initEvents();\n  }\n\n  /**\n   * A proxy to the {@link net~Server#listen} method on {@link MessageBroker#server}.\n   * @param {...object} [args] - The args that get passed to {@link net~Server#listen}.\n   */\n  listen (...args)\n  {\n    this._server.listen(...args);\n  }\n\n  /**\n   * Gets the message broker's server\n   * @type {net~Server}\n   */\n  get server () {return this._server}\n\n\n  /** Initializes the event listeners */\n  _initEvents ()\n  {\n    const server = this._server;\n\n    const events = ['close', 'connection', 'error', 'listening'];\n    for (let event of events) {\n      server.on(event, (...args) => {\n        this[`_on_${event}`](...args);\n        this.emit(event, ...args)\n      });\n    }\n  }\n\n  /** The 'close' event handler */\n  _on_close ()\n  {\n    log('server closed');\n  }\n\n\n  /** The 'connection' event handler */\n  _on_connection (socket)\n  {\n    log('received connection');\n    const transcoder = new this._transcoder(socket);\n\n    transcoder.on('data', (data) => {\n      log('recieved data');\n      // transcoder.write(data);\n    });\n\n    socket.on('close', () => log('close'));\n  }\n\n  /** The 'error' event handler */\n  _on_error (err)\n  {\n    log(err);\n  }\n\n  /** The 'listening' event handler */\n  _on_listening ()\n  {\n    log('listening');\n  }\n}\n",
     "static": true,
-    "longname": "C:/Users/alevine/Documents/Projects/the-architect/packages/message-broker/message-broker.js",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/message-broker/message-broker.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 838,
+    "__docId__": 841,
     "kind": "variable",
     "name": "EventEmitter",
     "memberof": "packages/message-broker/message-broker.js",
@@ -10298,7 +10334,7 @@
     }
   },
   {
-    "__docId__": 839,
+    "__docId__": 842,
     "kind": "variable",
     "name": "Server",
     "memberof": "packages/message-broker/message-broker.js",
@@ -10318,7 +10354,7 @@
     }
   },
   {
-    "__docId__": 840,
+    "__docId__": 843,
     "kind": "variable",
     "name": "UUID",
     "memberof": "packages/message-broker/message-broker.js",
@@ -10338,12 +10374,32 @@
     }
   },
   {
-    "__docId__": 841,
+    "__docId__": 844,
     "kind": "variable",
     "name": "ServiceRegistry",
     "memberof": "packages/message-broker/message-broker.js",
     "static": true,
     "longname": "packages/message-broker/message-broker.js~ServiceRegistry",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/packages/message-broker/message-broker.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 845,
+    "kind": "variable",
+    "name": "Message",
+    "memberof": "packages/message-broker/message-broker.js",
+    "static": true,
+    "longname": "packages/message-broker/message-broker.js~Message",
     "access": "public",
     "export": false,
     "importPath": "the-architect/packages/message-broker/message-broker.js",
@@ -10358,12 +10414,12 @@
     }
   },
   {
-    "__docId__": 842,
+    "__docId__": 846,
     "kind": "variable",
-    "name": "Message",
+    "name": "JSONTranscoder",
     "memberof": "packages/message-broker/message-broker.js",
     "static": true,
-    "longname": "packages/message-broker/message-broker.js~Message",
+    "longname": "packages/message-broker/message-broker.js~JSONTranscoder",
     "access": "public",
     "export": false,
     "importPath": "the-architect/packages/message-broker/message-broker.js",
@@ -10378,7 +10434,27 @@
     }
   },
   {
-    "__docId__": 843,
+    "__docId__": 847,
+    "kind": "variable",
+    "name": "log",
+    "memberof": "packages/message-broker/message-broker.js",
+    "static": true,
+    "longname": "packages/message-broker/message-broker.js~log",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/packages/message-broker/message-broker.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 848,
     "kind": "class",
     "name": "MessageBroker",
     "memberof": "packages/message-broker/message-broker.js",
@@ -10389,14 +10465,14 @@
     "importPath": "the-architect/packages/message-broker/message-broker.js",
     "importStyle": "MessageBroker",
     "description": "A class representing a message broker",
-    "lineNumber": 12,
+    "lineNumber": 13,
     "interface": false,
     "extends": [
       "events~EventEmitter"
     ]
   },
   {
-    "__docId__": 844,
+    "__docId__": 849,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "packages/message-broker/message-broker.js~MessageBroker",
@@ -10406,7 +10482,7 @@
     "longname": "packages/message-broker/message-broker.js~MessageBroker#constructor",
     "access": "public",
     "description": "Creates a message broker.",
-    "lineNumber": 20,
+    "lineNumber": 22,
     "params": [
       {
         "nullable": null,
@@ -10414,9 +10490,7 @@
           "object"
         ],
         "spread": false,
-        "optional": true,
-        "defaultValue": "{}",
-        "defaultRaw": {},
+        "optional": false,
         "name": "opts",
         "description": "The configuration options."
       },
@@ -10431,6 +10505,18 @@
         "defaultRaw": "new net.Server",
         "name": "opts.server",
         "description": "The server to attach the message broker to."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "#Transcoder"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "JSONTranscoder",
+        "defaultRaw": "JSONTranscoder",
+        "name": "transcoder",
+        "description": "The transcoder."
       }
     ],
     "return": {
@@ -10443,7 +10529,7 @@
     }
   },
   {
-    "__docId__": 845,
+    "__docId__": 850,
     "kind": "member",
     "name": "_server",
     "memberof": "packages/message-broker/message-broker.js~MessageBroker",
@@ -10451,7 +10537,7 @@
     "longname": "packages/message-broker/message-broker.js~MessageBroker#_server",
     "access": "private",
     "description": "The server instance",
-    "lineNumber": 27,
+    "lineNumber": 30,
     "ignore": true,
     "type": {
       "types": [
@@ -10460,7 +10546,24 @@
     }
   },
   {
-    "__docId__": 846,
+    "__docId__": 851,
+    "kind": "member",
+    "name": "_transcoder",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_transcoder",
+    "access": "private",
+    "description": "The transcoder constructor",
+    "lineNumber": 33,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 852,
     "kind": "method",
     "name": "listen",
     "memberof": "packages/message-broker/message-broker.js~MessageBroker",
@@ -10470,7 +10573,7 @@
     "longname": "packages/message-broker/message-broker.js~MessageBroker#listen",
     "access": "public",
     "description": "A proxy to the {@link net~Server#listen} method on {@link MessageBroker#server}.",
-    "lineNumber": 36,
+    "lineNumber": 42,
     "params": [
       {
         "nullable": null,
@@ -10486,7 +10589,7 @@
     "return": null
   },
   {
-    "__docId__": 847,
+    "__docId__": 853,
     "kind": "get",
     "name": "server",
     "memberof": "packages/message-broker/message-broker.js~MessageBroker",
@@ -10496,7 +10599,7 @@
     "longname": "packages/message-broker/message-broker.js~MessageBroker#server",
     "access": "public",
     "description": "Gets the message broker's server",
-    "lineNumber": 45,
+    "lineNumber": 51,
     "type": {
       "nullable": null,
       "types": [
@@ -10507,7 +10610,7 @@
     }
   },
   {
-    "__docId__": 848,
+    "__docId__": 854,
     "kind": "method",
     "name": "_initEvents",
     "memberof": "packages/message-broker/message-broker.js~MessageBroker",
@@ -10517,24 +10620,102 @@
     "longname": "packages/message-broker/message-broker.js~MessageBroker#_initEvents",
     "access": "private",
     "description": "Initializes the event listeners",
-    "lineNumber": 48,
+    "lineNumber": 55,
     "ignore": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 849,
+    "__docId__": 855,
+    "kind": "method",
+    "name": "_on_close",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_on_close",
+    "access": "private",
+    "description": "The 'close' event handler",
+    "lineNumber": 69,
+    "ignore": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 856,
+    "kind": "method",
+    "name": "_on_connection",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_on_connection",
+    "access": "private",
+    "description": "The 'connection' event handler",
+    "lineNumber": 76,
+    "ignore": true,
+    "params": [
+      {
+        "name": "socket",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 857,
+    "kind": "method",
+    "name": "_on_error",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_on_error",
+    "access": "private",
+    "description": "The 'error' event handler",
+    "lineNumber": 90,
+    "ignore": true,
+    "params": [
+      {
+        "name": "err",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 858,
+    "kind": "method",
+    "name": "_on_listening",
+    "memberof": "packages/message-broker/message-broker.js~MessageBroker",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "packages/message-broker/message-broker.js~MessageBroker#_on_listening",
+    "access": "private",
+    "description": "The 'listening' event handler",
+    "lineNumber": 96,
+    "ignore": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 859,
     "kind": "file",
     "name": "packages/service-registry/service-registry.js",
     "content": "const UUID = require('uuid/v4');\nconst Message = require('@the-architect/message');\n\n/** A class representing a service registry. */\nmodule.exports = class ServiceRegistry\n{\n  /**\n   * Creates a service registry.\n   * @return {ServiceRegistry}\n   */\n  constructor ()\n  {\n  }\n}\n",
     "static": true,
-    "longname": "C:/Users/alevine/Documents/Projects/the-architect/packages/service-registry/service-registry.js",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/service-registry/service-registry.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 850,
+    "__docId__": 860,
     "kind": "variable",
     "name": "UUID",
     "memberof": "packages/service-registry/service-registry.js",
@@ -10554,7 +10735,7 @@
     }
   },
   {
-    "__docId__": 851,
+    "__docId__": 861,
     "kind": "variable",
     "name": "Message",
     "memberof": "packages/service-registry/service-registry.js",
@@ -10574,7 +10755,7 @@
     }
   },
   {
-    "__docId__": 852,
+    "__docId__": 862,
     "kind": "class",
     "name": "ServiceRegistry",
     "memberof": "packages/service-registry/service-registry.js",
@@ -10589,7 +10770,7 @@
     "interface": false
   },
   {
-    "__docId__": 853,
+    "__docId__": 863,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "packages/service-registry/service-registry.js~ServiceRegistry",
@@ -10610,18 +10791,125 @@
     }
   },
   {
-    "__docId__": 854,
+    "__docId__": 864,
     "kind": "file",
-    "name": "packages/transcoder/transcoder.js",
-    "content": "const {Duplex, PassThrough} = require('stream');\n\n/**\n * A class representing the base transcoder mechanism. It wraps another duplex\n * stream and encodes data when written and decodes data when read.\n * @extends {stream~Duplex}\n */\nmodule.exports = class Transcoder extends Duplex\n{\n  /**\n   * Creates a transcoder.\n   * @param {object} [opts={}] - The configuration options.\n   * @param {stream~Duplex} opts.stream - The connected stream.\n   * @param {stream~Transform} [opts.encoder=new stream.PassThrough] - The encoding transform.\n   * @param {stream~Transform} [opts.decoder=new stream.PassThrough] - The decoding transform.\n   */\n  constructor ({\n    stream,\n    encoder = new PassThrough(),\n    decoder = new PassThrough(),\n  }={}, opts = {\n    writableObjectMode: true,\n    readableObjectMode: true,\n  })\n  {\n    super(opts);\n\n    if (!stream) throw TypeError('Expected stream option');\n\n    /** The connectied stream */\n    this._stream = stream;\n\n    /** The encoding transform */\n    this._encoder = encoder;\n\n    /** The decoding transform */\n    this._decoder = decoder;\n\n    encoder.pipe(stream);\n    stream.pipe(decoder);\n  }\n\n  /**\n   * @override\n   * Recieves output directly from {@link Transcoder#_decoder}.\n   */\n  _read (size)\n  {\n    this.push(this._decoder.read(size));\n  }\n\n  /**\n   * @override\n   * Writes input directly to {@link Transcoder#_encoder}.\n   */\n  _write (chunk, enc, cb)\n  {\n    this._encoder.write(chunk, enc, cb);\n  }\n}\n",
+    "name": "packages/transcoder/json-transcoder.js",
+    "content": "const {Transform} = require('stream');\n\n/**\n * The default transcoder. Converts to and from JSON.\n * @extends {Transcoder}\n */\nmodule.exports = class JSONTranscoder extends require('./transcoder')\n{\n  /**\n   * @override\n   * @returns {stream~Transform}\n   */\n  static encoder ()\n  {\n    return new Transform({\n      writableObjectMode: true,\n      transform (chunk, enc, cb) {\n        this.push(JSON.stringify(chunk));\n        cb();\n      }\n    });\n  }\n\n  /**\n   * @override\n   * @returns {stream~Transform}\n   */\n  static decoder ()\n  {\n    return new Transform({\n      readableObjectMode: true,\n      transform (chunk, enc, cb) {\n        this.push(JSON.parse(chunk));\n        cb();\n      }\n    });\n  }\n}\n\n",
     "static": true,
-    "longname": "C:/Users/alevine/Documents/Projects/the-architect/packages/transcoder/transcoder.js",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/transcoder/json-transcoder.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 855,
+    "__docId__": 865,
+    "kind": "variable",
+    "name": "Transform",
+    "memberof": "packages/transcoder/json-transcoder.js",
+    "static": true,
+    "longname": "packages/transcoder/json-transcoder.js~Transform",
+    "access": "public",
+    "export": false,
+    "importPath": "the-architect/packages/transcoder/json-transcoder.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 866,
+    "kind": "class",
+    "name": "JSONTranscoder",
+    "memberof": "packages/transcoder/json-transcoder.js",
+    "static": true,
+    "longname": "packages/transcoder/json-transcoder.js~JSONTranscoder",
+    "access": "public",
+    "export": true,
+    "importPath": "the-architect/packages/transcoder/json-transcoder.js",
+    "importStyle": "JSONTranscoder",
+    "description": "The default transcoder. Converts to and from JSON.",
+    "lineNumber": 7,
+    "interface": false,
+    "extends": [
+      "Transcoder"
+    ]
+  },
+  {
+    "__docId__": 867,
+    "kind": "method",
+    "name": "encoder",
+    "memberof": "packages/transcoder/json-transcoder.js~JSONTranscoder",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "packages/transcoder/json-transcoder.js~JSONTranscoder.encoder",
+    "access": "public",
+    "description": "",
+    "lineNumber": 13,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{stream~Transform}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "stream~Transform"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "override": true,
+    "params": []
+  },
+  {
+    "__docId__": 868,
+    "kind": "method",
+    "name": "decoder",
+    "memberof": "packages/transcoder/json-transcoder.js~JSONTranscoder",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "packages/transcoder/json-transcoder.js~JSONTranscoder.decoder",
+    "access": "public",
+    "description": "",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{stream~Transform}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "stream~Transform"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "override": true,
+    "params": []
+  },
+  {
+    "__docId__": 869,
+    "kind": "file",
+    "name": "packages/transcoder/transcoder.js",
+    "content": "const {Duplex, PassThrough} = require('stream');\n\n/**\n * A class representing the base transcoder mechanism. It wraps another duplex\n * stream and encodes data when written and decodes data when read.\n * @extends {stream~Duplex}\n */\nmodule.exports = class Transcoder extends Duplex\n{\n  /**\n   * Creates a transcoder.\n   * @param {stream~Duplex} stream - The connected stream.\n   * @param {object} [opts={writableObjectMode: true, readableObjectMode: true}]\n   * opts - The opts to pass into the {@link stream~Duplex} constructor.\n   */\n  constructor (stream, opts = {\n    writableObjectMode: true,\n    readableObjectMode: true,\n  })\n  {\n    super(opts);\n\n    if (!stream) throw TypeError('Expected stream option');\n\n    /** The connectied stream */\n    this._stream = stream;\n\n    /** The encoding transform */\n    const encoder = this._encoder = this.constructor.encoder();\n\n    /** The decoding transform */\n    const decoder = this._decoder = this.constructor.decoder();\n\n    stream.on('data', (...args) => decoder.write(...args));\n    encoder.on('data', (...args) => stream.write(...args));\n    decoder.on('data', (...args) => this.emit('data', ...args));\n  }\n\n  /**\n   * @abstract\n   * Gets a new encoder\n   * @returns {stream~Transform}\n   */\n  static encoder ()\n  {\n    return new PassThrough();\n  }\n\n  /**\n   * @abstract\n   * Gets a new decoder\n   * @returns {stream~Transform}\n   */\n  static decoder ()\n  {\n    return new PassThrough();\n  }\n\n  /**\n   * @override\n   * Recieves output directly from {@link Transcoder#_decoder}.\n   */\n  _read (size)\n  {\n    this.push(this._decoder.read(size));\n  }\n\n  /**\n   * @override\n   * Writes input directly to {@link Transcoder#_encoder}.\n   */\n  _write (chunk, enc, cb)\n  {\n    this._encoder.write(chunk, enc, cb);\n  }\n}\n",
+    "static": true,
+    "longname": "/mnt/storage/Documents/Projects/the-architect/packages/transcoder/transcoder.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 870,
     "kind": "variable",
     "name": "Duplex",
     "memberof": "packages/transcoder/transcoder.js",
@@ -10641,7 +10929,7 @@
     }
   },
   {
-    "__docId__": 856,
+    "__docId__": 871,
     "kind": "class",
     "name": "Transcoder",
     "memberof": "packages/transcoder/transcoder.js",
@@ -10659,7 +10947,7 @@
     ]
   },
   {
-    "__docId__": 857,
+    "__docId__": 872,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "packages/transcoder/transcoder.js~Transcoder",
@@ -10669,20 +10957,8 @@
     "longname": "packages/transcoder/transcoder.js~Transcoder#constructor",
     "access": "public",
     "description": "Creates a transcoder.",
-    "lineNumber": 17,
+    "lineNumber": 16,
     "params": [
-      {
-        "nullable": null,
-        "types": [
-          "object"
-        ],
-        "spread": false,
-        "optional": true,
-        "defaultValue": "{}",
-        "defaultRaw": {},
-        "name": "opts",
-        "description": "The configuration options."
-      },
       {
         "nullable": null,
         "types": [
@@ -10690,37 +10966,25 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "opts.stream",
+        "name": "stream",
         "description": "The connected stream."
       },
       {
         "nullable": null,
         "types": [
-          "stream~Transform"
+          "object"
         ],
         "spread": false,
         "optional": true,
-        "defaultValue": "new stream.PassThrough",
-        "defaultRaw": "new stream.PassThrough",
-        "name": "opts.encoder",
-        "description": "The encoding transform."
-      },
-      {
-        "nullable": null,
-        "types": [
-          "stream~Transform"
-        ],
-        "spread": false,
-        "optional": true,
-        "defaultValue": "new stream.PassThrough",
-        "defaultRaw": "new stream.PassThrough",
-        "name": "opts.decoder",
-        "description": "The decoding transform."
+        "defaultValue": "{writableObjectMode: true, readableObjectMode: true}",
+        "defaultRaw": "{writableObjectMode: true, readableObjectMode: true}",
+        "name": "opts",
+        "description": "opts - The opts to pass into the {@link stream~Duplex} constructor."
       }
     ]
   },
   {
-    "__docId__": 858,
+    "__docId__": 873,
     "kind": "member",
     "name": "_stream",
     "memberof": "packages/transcoder/transcoder.js~Transcoder",
@@ -10728,7 +10992,7 @@
     "longname": "packages/transcoder/transcoder.js~Transcoder#_stream",
     "access": "private",
     "description": "The connectied stream",
-    "lineNumber": 31,
+    "lineNumber": 26,
     "ignore": true,
     "type": {
       "types": [
@@ -10737,41 +11001,65 @@
     }
   },
   {
-    "__docId__": 859,
-    "kind": "member",
-    "name": "_encoder",
+    "__docId__": 874,
+    "kind": "method",
+    "name": "encoder",
     "memberof": "packages/transcoder/transcoder.js~Transcoder",
-    "static": false,
-    "longname": "packages/transcoder/transcoder.js~Transcoder#_encoder",
-    "access": "private",
-    "description": "The encoding transform",
-    "lineNumber": 34,
-    "ignore": true,
-    "type": {
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "packages/transcoder/transcoder.js~Transcoder.encoder",
+    "access": "public",
+    "description": "",
+    "lineNumber": 44,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{stream~Transform}"
+      }
+    ],
+    "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
-    }
+        "stream~Transform"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "abstract": true,
+    "params": []
   },
   {
-    "__docId__": 860,
-    "kind": "member",
-    "name": "_decoder",
+    "__docId__": 875,
+    "kind": "method",
+    "name": "decoder",
     "memberof": "packages/transcoder/transcoder.js~Transcoder",
-    "static": false,
-    "longname": "packages/transcoder/transcoder.js~Transcoder#_decoder",
-    "access": "private",
-    "description": "The decoding transform",
-    "lineNumber": 37,
-    "ignore": true,
-    "type": {
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "packages/transcoder/transcoder.js~Transcoder.decoder",
+    "access": "public",
+    "description": "",
+    "lineNumber": 54,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{stream~Transform}"
+      }
+    ],
+    "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
-    }
+        "stream~Transform"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "abstract": true,
+    "params": []
   },
   {
-    "__docId__": 861,
+    "__docId__": 876,
     "kind": "method",
     "name": "_read",
     "memberof": "packages/transcoder/transcoder.js~Transcoder",
@@ -10781,7 +11069,7 @@
     "longname": "packages/transcoder/transcoder.js~Transcoder#_read",
     "access": "private",
     "description": "",
-    "lineNumber": 47,
+    "lineNumber": 63,
     "override": true,
     "ignore": true,
     "params": [
@@ -10795,7 +11083,7 @@
     "return": null
   },
   {
-    "__docId__": 862,
+    "__docId__": 877,
     "kind": "method",
     "name": "_write",
     "memberof": "packages/transcoder/transcoder.js~Transcoder",
@@ -10805,7 +11093,7 @@
     "longname": "packages/transcoder/transcoder.js~Transcoder#_write",
     "access": "private",
     "description": "",
-    "lineNumber": 56,
+    "lineNumber": 72,
     "override": true,
     "ignore": true,
     "params": [
@@ -10832,16 +11120,16 @@
   },
   {
     "kind": "index",
-    "content": "# The Architect\n\n[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=master)](https://travis-ci.org/Aldlevine/the-architect)\n[![Coverage Status](https://coveralls.io/repos/github/Aldlevine/the-architect/badge.svg?branch=master)](https://coveralls.io/github/Aldlevine/the-architect?branch=master)\n[![Docs Status](https://aldlevine.github.io/the-architect/badge.svg)](https://aldlevine.github.io/the-architect/source.html)\n[![Greenkeeper badge](https://badges.greenkeeper.io/Aldlevine/the-architect.svg)](https://greenkeeper.io/)\n\nA service registry and message broker system.\n\n\n## Goals\n\nThese are the dreams.\n\n- A service registry that acts as a proxy between services.\n- A load balancing scheme for synchronous transport.\n- A message queue for asynchronous transport.\n\n\n## Parts and Pieces\n\nThis is the stuff that dreams are made of.\n\n\n### service-registry\n\nThe service registry stores and retrieves services by both a service uri and a\nservice id.\n\nWhen a service worker starts, it must make a tcp connection to the service\nregistry. After the registry receives the register request it assigns the\nservice an id and stores the service's information in a database. When a service\nworker's connection is broken the registry removes it from the database based on\nthe service's id.\n\n```\n┌─────────────────────────────────────────────────╖\n│ ┌──────────┐      ┌─────────┐      ┌──────────┐ ║\n│ │ register │ ═══> │ service │ ═══> │ service  │ ║\n│ │ service  │      └─────────┘      │ registry │ ║\n│ └──────────┘                       │          │ ║\n│                                    │          │ ║\n│ ┌──────────┐      ┌─────────┐      │          │ ║\n│ │ query    │ ═══> │ query   │ ═══> │          │ ║\n│ │ service  │      └─────────┘      │          │ ║\n│ │          │      ┌─────────┐      │          │ ║\n│ │          │ <═══ │ service │ <═══ │          │ ║\n│ └──────────┘      └─────────┘      └──────────┘ ║\n╘═════════════════════════════════════════════════╝\n```\n\n\n### service\n\nA service is a stub that contains information about it's workers in the service\nregistry. It provides the means of tracking and communicating with a worker or\ngroups of workers.\n\n\n### worker\n\nA single instance of a service. This typically translates to a single process,\nhowever it is possible(though not advised) for multiple workers to run in one\nprocess. As there is no specification for how workers should function, only a\nmessaging API, it is not necessary for a worker to use the provided `worker`\nmodule in order to communicate. This helps in providing a simple and standard\ninterface for communicating and allows for the simple implementation of this\nstandard in any language. However using a standardized module is recommended to\nensure stabile and predictable communication.\n\nWhen a worker's connection to the service registry is unexpectedly closed, while\nit's not necessary, the worker should follow a reconnect policy such as:\n\n- ondisconnect: {\"retry\", \"exit\", \"ignore\"}\n- retries: {number}\n- interval: {ms}\n\n\n### worker-picker\n\nThe worker picker is a mechanism that retrieves a worker from a service\naddressed by it's uri. The main purpose of this mechanism is to provide load\nbalancing to service requests. While there is no defined algorithm the \"power of\ntwo random choices\" algorithm is an effective and simple load balancing\nalgorithm.\n\nWhen the message broker needs to access a single worker from a service by the\nservice's uri, it requests this worker via the worker picker.\n\n\n### message-broker\n\nThe message broker is the communication hub. It manages all incoming and\noutgoing messages between services.\n\nOnce a service is registered, it's connection is piped to the message broker.\nOnce connected, a service can begin sending and receiving messages from other\nservices. The message broker identifies from the message headers the intended\nrecipient service(s) and delivers the message.\n\nThere are five primary messaging schemes: __PUB/SUB__, __REQ/RES__, __DIR__,\n__QUE__, and  __SRV__.\n\n1. __PUB/SUB__: *publish / subscribe*\n  - This messaging scheme is intended for broadcasting messages to any service\n    that requests these messages. An example might include \"log\" messages\n    intended for a logging service to receive and write to a file. If a service\n    subscribes to \"log\" messages, any \"log\" messages published by any service\n    will be delivered to the subscribing service.\n  - When a service registers for a subscription it recieves all matching\n    messages sent by any other unique service. This can include messages from\n    other services of the same type (unless specifically excluded by the\n    criteria).\n  - When a service publishes a message, the same message is sent to all services\n    with a matching subscription.\n2. __REQ/RES__: *request / response*\n  - This messaging scheme is intended for typically synchronous and composable\n    tasks.\n  - When a service makes a request of either a unique service or service type, a\n    request message is sent to the reciving service. Once the requested service\n    finishes processing the request, it responds with another message that is\n    delivered directly to the original requesting service.\n  - The message broker tracks the number of open requests for each worker.\n3. __DIR__: *direct message*\n  - This message scheme is a sort of half-bake REQ/RES scheme.\n  - When a service sends a direct message to another service, it does so without\n    expecting any response.\n4. __QUE__: *registry query*\n  - This is a message scheme that allows a worker to communicate directly with\n    the service registry.\n  - The purpose of this scheme is to provide a means of introspection into the\n    service registry.\n  - Examples of useful information that this scheme could provide are:\n    - A list of the available services.\n    - The number of open requests for each service.\n    - The average execution time of requests for each service.\n    - A list of subscribers and their message criteria.\n5. __SRV__: *service registry connect signal*\n  - This is a special message scheme that connects service registries together.\n  - The purpose of this is to enable multiple replicas of the service registry\n    to share access to services.\n\n\n### message\n\nA message is a packet of data sent between services. It consists of 3 pieces:\n1. The message scheme\n  - This can be equated to http methods\n  - The available schemes are:\n    - PUB\n    - SUB\n    - REQ\n    - RES\n    - DIR\n    - QUE\n    - SRV\n2. The message headers\n  - This can be equated to http headers.\n  - While any arbitrary headers are allowed, there a certain headers reserved\n    for standard communication:\n    - __id__: The message id\n    - __src__: The id of the source worker\n    - __tgt__: The id of the target worker -- *only applicable to direct\n      messages {DIR}*\n    - __uri__: The uri of the target service -- *only applicable for\n      subscriptions and service requests {REQ, SUB}*\n    - __req__: The id of the request message that triggered a response -- *only\n      applicable for service responses {RES}*\n    - __tag__: The subscription tag for the pub/sub scheme. -- *only applicable\n      for publish and subscribe messages {PUB, SUB}*\n3. The message body\n  - This can be equated to an http body\n\n\n```\n┌──────────────────────────────────────────────────╖\n│ example publish message                          ║\n│ {                                                ║\n│   scheme: 'PUB',                                 ║\n│   headers: {                                     ║\n│     id: 'f2a7c7c1-8ddf-40c6-bd05-9dc6c8128678',  ║\n│     src: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│     tag: 'log.my-service'                        ║\n│   },                                             ║\n│   body: {                                        ║\n│     level: 'error',                              ║\n│     message: 'Something went wrong!',            ║\n│     stack: 'And this is where it happened...'    ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example subscribe message                        ║\n│ {                                                ║\n│   scheme: 'SUB',                                 ║\n│   headers: {                                     ║\n│     id: '362701ad-121d-49e9-b7b0-7eec8a12f6a7',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     tag: 'log.*'                                 ║\n│   },                                             ║\n│   body: {                                        ║\n│     level: {$in: ['warning', 'error']}           ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example request message                          ║\n│ {                                                ║\n│   scheme: 'REQ',                                 ║\n│   headers: {                                     ║\n│     id: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4',  ║\n│     src: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│     uri: 'greeter/say-hello'                     ║\n│   },                                             ║\n│   body: {                                        ║\n│     fname: 'Marl',                               ║\n│     lname: 'Karx'                                ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example response message                         ║\n│ {                                                ║\n│   scheme: 'RES',                                 ║\n│   headers: {                                     ║\n│     id: 'f9f6424d-1278-447e-95ba-da04206bde32',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     req: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4', ║\n│   },                                             ║\n│   body: {                                        ║\n│     greeting: 'Hello Mark Karx!'                 ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example direct message                           ║\n│ {                                                ║\n│   headers: {                                     ║\n│   scheme: 'DIR',                                 ║\n│     id: '5b51247d-6401-4fa0-ad46-5543b82482b3',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     tgt: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│   },                                             ║\n│   body: {                                        ║\n│     body: {                                      ║\n│       message: 'Here, take this',                ║\n│       stuff: {}                                  ║\n│     }                                            ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n```\n\n\n## Help yourself\n\nThese things are left up to the designer to implement. *(Though, there may be\nprefabs out there somewhere ;)*\n\n\n### matcher\n\nThe matcher is a mechanism that determines if a given message meets the criteria\nfor a subscriber. It should match on the `tag` header and `body`, but can match\non any part of the message. A recommended implementation is to match the tag\nagainst a glob pattern ([minimatch](https://github.com/isaacs/minimatch)) and\nthe body through [sift.js](https://github.com/crcn/sift.js).\n\n\n```\n┌───────────────────────────────────────────────────╖\n│ ┌─────────┐     ┌─────────┐     ┌───────────────┐ ║\n│ │ message │     │  true   │ ══> │ send message  │ ║\n│ └─────────┘     └───╥─────┘     └───────────────┘ ║\n│      ║              ║                   ║         ║\n│      ║              ║                   V         ║\n│      ║          ╔═══╩═════╗     ┌───────────────┐ ║\n│      ╚════════> ║ matcher ║ <── │ subscription  │ ║\n│                 ╚═══╤═════╝     └──────┐.┌──────┘ ║\n│                     │           ┌──────┘.└──────┐ ║\n│ ┌─────────┐     ┌───┴─────┐     │   . . . . .   │ ║\n│ │ ignore  │ <── │  false  │     │ subscriptions │ ║\n│ └─────────┘     └─────────┘     └───────────────┘ ║\n╘═══════════════════════════════════════════════════╝\n\n```\n\n\n### balancer\n\nThe balancer is a mechanism that provides the algorithm used by the worker\npicker.\n\n*__TODO__: provide more info.*\n\n\n### transcoder\n\nThe transcoder is a duplex transform stream. On the front-end it reads and\nwrites objects. On the back-end it reads and writes buffers.\n\nThe purpose of this module is to simplify streaming encoded messages to and from\nsockets and http requests/responses. However, it can be used as a bidirectional\ntransform for any duplex stream. While the message encoding system is not\ndefined, a good option that works well with this spec is\n[msgpack](https://github.com/msgpack/msgpack).\n\n\n```\n┌────────────────────────────────────────────────────────╖\n│   Front end                             Back end       ║\n│ ┌──────────────┐      ┌────────┐      ┌──────────────┐ ║\n│ │ write object │ ═══> │ encode │ ───> │ read buffer  │ ║\n│ └──────────────┘      └────────┘      └──────────────┘ ║\n│ ┌──────────────┐      ┌────────┐      ┌──────────────┐ ║\n│ │ read object  │ <═══ │ decode │ <─── │ write buffer │ ║\n│ └──────────────┘      └────────┘      └──────────────┘ ║\n╘════════════════════════════════════════════════════════╝\n```\n",
-    "longname": "C:\\Users\\alevine\\Documents\\Projects\\the-architect\\README.md",
+    "content": "# The Architect\n\n[![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=master)](https://travis-ci.org/Aldlevine/the-architect)\n[![Coverage Status](https://coveralls.io/repos/github/Aldlevine/the-architect/badge.svg?branch=master)](https://coveralls.io/github/Aldlevine/the-architect?branch=master)\n[![Docs Status](https://aldlevine.github.io/the-architect/badge.svg)](https://aldlevine.github.io/the-architect/source.html)\n[![Greenkeeper badge](https://badges.greenkeeper.io/Aldlevine/the-architect.svg)](https://greenkeeper.io/)\n\nA service registry and message broker system.\n\n\n## Goals\n\nThese are the dreams.\n\n- A service registry that acts as a proxy between services.\n- A load balancing scheme for synchronous transport.\n- A message queue for asynchronous transport.\n\n\n## Parts and Pieces\n\nThis is the stuff that dreams are made of.\n\n\n### service-registry\n\nThe service registry stores and retrieves services by both a service uri and a\nservice id.\n\nWhen a service worker starts, it must make a tcp connection to the service\nregistry. After the registry receives the register request it assigns the\nservice an id and stores the service's information in a database. When a service\nworker's connection is broken the registry removes it from the database based on\nthe service's id.\n\n```\n┌─────────────────────────────────────────────────╖\n│ ┌──────────┐      ┌─────────┐      ┌──────────┐ ║\n│ │ register │ ═══> │ service │ ═══> │ service  │ ║\n│ │ service  │      └─────────┘      │ registry │ ║\n│ └──────────┘                       │          │ ║\n│                                    │          │ ║\n│ ┌──────────┐      ┌─────────┐      │          │ ║\n│ │ query    │ ═══> │ query   │ ═══> │          │ ║\n│ │ service  │      └─────────┘      │          │ ║\n│ │          │      ┌─────────┐      │          │ ║\n│ │          │ <═══ │ service │ <═══ │          │ ║\n│ └──────────┘      └─────────┘      └──────────┘ ║\n╘═════════════════════════════════════════════════╝\n```\n\n\n### service\n\nA service is a stub that contains information about it's workers in the service\nregistry. It provides the means of tracking and communicating with a worker or\ngroups of workers.\n\n\n### worker\n\nA single instance of a service. This typically translates to a single process,\nhowever it is possible(though not advised) for multiple workers to run in one\nprocess. As there is no specification for how workers should function, only a\nmessaging API, it is not necessary for a worker to use the provided `worker`\nmodule in order to communicate. This helps in providing a simple and standard\ninterface for communicating and allows for the simple implementation of this\nstandard in any language. However using a standardized module is recommended to\nensure stabile and predictable communication.\n\nWhen a worker's connection to the service registry is unexpectedly closed, while\nit's not necessary, the worker should follow a reconnect policy such as:\n\n- ondisconnect: {\"retry\", \"exit\", \"ignore\"}\n- retries: {number}\n- interval: {ms}\n\n\n### worker-picker\n\nThe worker picker is a mechanism that retrieves a worker from a service\naddressed by it's uri. The main purpose of this mechanism is to provide load\nbalancing to service requests. While there is no defined algorithm the \"power of\ntwo random choices\" algorithm is an effective and simple load balancing\nalgorithm.\n\nWhen the message broker needs to access a single worker from a service by the\nservice's uri, it requests this worker via the worker picker.\n\n\n### message-broker\n\nThe message broker is the communication hub. It manages all incoming and\noutgoing messages between services.\n\nOnce a service is registered, it's connection is piped to the message broker.\nOnce connected, a service can begin sending and receiving messages from other\nservices. The message broker identifies from the message headers the intended\nrecipient service(s) and delivers the message.\n\nThere are five primary messaging schemes: __PUB/SUB__, __REQ/RES__, __DIR__,\n__QUE__, and  __REG__.\n\n1. __PUB/SUB__: *publish / subscribe*\n  - This messaging scheme is intended for broadcasting messages to any service\n    that requests these messages. An example might include \"log\" messages\n    intended for a logging service to receive and write to a file. If a service\n    subscribes to \"log\" messages, any \"log\" messages published by any service\n    will be delivered to the subscribing service.\n  - When a service registers for a subscription it recieves all matching\n    messages sent by any other unique service. This can include messages from\n    other services of the same type (unless specifically excluded by the\n    criteria).\n  - When a service publishes a message, the same message is sent to all services\n    with a matching subscription.\n2. __REQ/RES__: *request / response*\n  - This messaging scheme is intended for typically synchronous and composable\n    tasks.\n  - When a service makes a request of either a unique service or service type, a\n    request message is sent to the reciving service. Once the requested service\n    finishes processing the request, it responds with another message that is\n    delivered directly to the original requesting service.\n  - The message broker tracks the number of open requests for each worker.\n3. __DIR__: *direct message*\n  - This message scheme is a sort of half-bake REQ/RES scheme.\n  - When a service sends a direct message to another service, it does so without\n    expecting any response.\n4. __QUE__: *registry query*\n  - This is a message scheme that allows a worker to communicate directly with\n    the service registry.\n  - The purpose of this scheme is to provide a means of introspection into the\n    service registry.\n  - Examples of useful information that this scheme could provide are:\n    - A list of the available services.\n    - The number of open requests for each service.\n    - The average execution time of requests for each service.\n    - A list of subscribers and their message criteria.\n5. __REG__: *register message*\n  - This is a special message scheme that gives the service registry info about\n    the service.\n  - It should be the first message sent by any service worker.\n  - For a service that will accept requests {REQ} it must include the `uri`\n    header with the service name.\n  - It can also, under special circumstances, be used to connect multiple\n    service registries together.\n\n### message\n\nA message is a packet of data sent between services. It consists of 3 pieces:\n1. The message scheme\n  - This can be equated to http methods\n  - The available schemes are:\n    - PUB\n    - SUB\n    - REQ\n    - RES\n    - DIR\n    - QUE\n    - REG\n2. The message headers\n  - This can be equated to http headers.\n  - While any arbitrary headers are allowed, there a certain headers reserved\n    for standard communication:\n    - __id__: The message id\n    - __src__: The id of the source worker\n    - __tgt__: The id of the target worker -- *only applicable to direct\n      messages {DIR}*\n    - __uri__: The uri of the target service -- *only applicable for\n      subscriptions, service requests and register messages {REQ, SUB, REG}*\n    - __req__: The id of the request message that triggered a response -- *only\n      applicable for service responses {RES}*\n    - __tag__: The subscription tag for the pub/sub scheme. -- *only applicable\n      for publish and subscribe messages {PUB, SUB}*\n3. The message body\n  - This can be equated to an http body\n\n\n```\n┌──────────────────────────────────────────────────╖\n│ example publish message                          ║\n│ {                                                ║\n│   scheme: 'PUB',                                 ║\n│   headers: {                                     ║\n│     id: 'f2a7c7c1-8ddf-40c6-bd05-9dc6c8128678',  ║\n│     src: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│     tag: 'log.my-service'                        ║\n│   },                                             ║\n│   body: {                                        ║\n│     level: 'error',                              ║\n│     message: 'Something went wrong!',            ║\n│     stack: 'And this is where it happened...'    ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example subscribe message                        ║\n│ {                                                ║\n│   scheme: 'SUB',                                 ║\n│   headers: {                                     ║\n│     id: '362701ad-121d-49e9-b7b0-7eec8a12f6a7',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     tag: 'log.*'                                 ║\n│   },                                             ║\n│   body: {                                        ║\n│     level: {$in: ['warning', 'error']}           ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example request message                          ║\n│ {                                                ║\n│   scheme: 'REQ',                                 ║\n│   headers: {                                     ║\n│     id: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4',  ║\n│     src: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│     uri: 'greeter/say-hello'                     ║\n│   },                                             ║\n│   body: {                                        ║\n│     fname: 'Marl',                               ║\n│     lname: 'Karx'                                ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example response message                         ║\n│ {                                                ║\n│   scheme: 'RES',                                 ║\n│   headers: {                                     ║\n│     id: 'f9f6424d-1278-447e-95ba-da04206bde32',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     req: '1bd0567e-8150-4f6b-935c-3b9b8aa05ad4', ║\n│   },                                             ║\n│   body: {                                        ║\n│     greeting: 'Hello Marl Karx!'                 ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example direct message                           ║\n│ {                                                ║\n│   scheme: 'DIR',                                 ║\n│   headers: {                                     ║\n│     id: '5b51247d-6401-4fa0-ad46-5543b82482b3',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     tgt: '4faacdc9-bd31-410f-9a17-5e884d709f78', ║\n│   },                                             ║\n│   body: {                                        ║\n│     message: 'Here, take this',                  ║\n│     stuff: {}                                    ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n┌──────────────────────────────────────────────────╖\n│ example register message                         ║\n│ {                                                ║\n│   scheme: 'REG',                                 ║\n│   headers: {                                     ║\n│     id: 'ac6d94e0-69b5-40f4-97b8-c82df9c4f176',  ║\n│     src: 'b2ef6770-2fdb-4f5a-afce-6a1df455c418', ║\n│     uri: 'greeter'                               ║\n│   },                                             ║\n│   body: {                                        ║\n│   }                                              ║\n│ }                                                ║\n╘══════════════════════════════════════════════════╝\n```\n\n\n## Help yourself\n\nThese things are left up to the designer to implement. *(Though, there may be\nprefabs out there somewhere ;)*\n\n\n### matcher\n\nThe matcher is a mechanism that determines if a given message meets the criteria\nfor a subscriber. It should match on the `tag` header and `body`, but can match\non any part of the message. A recommended implementation is to match the tag\nagainst a glob pattern ([minimatch](https://github.com/isaacs/minimatch)) and\nthe body through [sift.js](https://github.com/crcn/sift.js).\n\n\n```\n┌───────────────────────────────────────────────────╖\n│ ┌─────────┐     ┌─────────┐     ┌───────────────┐ ║\n│ │ message │     │  true   │ ══> │ send message  │ ║\n│ └─────────┘     └───╥─────┘     └───────────────┘ ║\n│      ║              ║                   ║         ║\n│      ║              ║                   V         ║\n│      ║          ╔═══╩═════╗     ┌───────────────┐ ║\n│      ╚════════> ║ matcher ║ <── │ subscription  │ ║\n│                 ╚═══╤═════╝     └──────┐.┌──────┘ ║\n│                     │           ┌──────┘.└──────┐ ║\n│ ┌─────────┐     ┌───┴─────┐     │   . . . . .   │ ║\n│ │ ignore  │ <── │  false  │     │ subscriptions │ ║\n│ └─────────┘     └─────────┘     └───────────────┘ ║\n╘═══════════════════════════════════════════════════╝\n\n```\n\n\n### balancer\n\nThe balancer is a mechanism that provides the algorithm used by the worker\npicker.\n\n*__TODO__: provide more info.*\n\n\n### transcoder\n\nThe transcoder is a duplex transform stream. On the front-end it reads and\nwrites objects. On the back-end it reads and writes buffers.\n\nThe purpose of this module is to simplify streaming encoded messages to and from\nsockets and http requests/responses. However, it can be used as a bidirectional\ntransform for any duplex stream. While the message encoding system is not\ndefined, a good option that works well with this spec is\n[msgpack](https://github.com/msgpack/msgpack).\n\n\n```\n┌────────────────────────────────────────────────────────╖\n│   Front end                             Back end       ║\n│ ┌──────────────┐      ┌────────┐      ┌──────────────┐ ║\n│ │ write object │ ═══> │ encode │ ───> │ read buffer  │ ║\n│ └──────────────┘      └────────┘      └──────────────┘ ║\n│ ┌──────────────┐      ┌────────┐      ┌──────────────┐ ║\n│ │ read object  │ <═══ │ decode │ <─── │ write buffer │ ║\n│ └──────────────┘      └────────┘      └──────────────┘ ║\n╘════════════════════════════════════════════════════════╝\n```\n",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"the-architect\",\n  \"version\": \"0.0.0\",\n  \"description\": \"A service registry and message broker system.\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Aldlevine/the-architect.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/Aldlevine/the-architect/issues\"\n  },\n  \"homepage\": \"https://github.com/Aldlevine/the-architect#readme\",\n  \"author\": \"Aaron Levine <ald.levine@gmail.com>\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"bootstrap\": \"symlink-dir packages packages/node_modules/@the-architect\",\n    \"build\": \"npm run compose -s -- build\",\n    \"compose\": \"node ./lib/compose.js\",\n    \"docs\": \"npm run compose -s -- docs\",\n    \"install\": \"npm run bootstrap\",\n    \"pkgupdate\": \"npm run compose -s -- pkgupdate\",\n    \"precommit\": \"npm run compose -s -- precommit\",\n    \"test\": \"npm run compose -s -- test\"\n  },\n  \"compose\": {\n    \"build\": [\n      \"npm run docs -s\",\n      \"npm run pkgupdate -s\"\n    ],\n    \"docs\": [\n      \"node ./lib/esdoc-external-node/generate-api.js\",\n      \"rimraf docs\",\n      \"rimraf packages/node_modules\",\n      \"esdoc\",\n      \"npm run bootstrap -s\"\n    ],\n    \"pkgupdate\": [\n      \"node ./lib/update-pkgjson.js ./packages\",\n      \"format-package -w\"\n    ],\n    \"precommit\": [\n      \"git stash save -q --keep-index 'pre-commit stash'\",\n      \"npm run test -s\",\n      \"npm run build -s\",\n      [\n        \"git reset -q --hard\",\n        \"git stash pop -q --index\",\n        \"git add README.md package.json packages/**/package.json\"\n      ]\n    ],\n    \"test\": [\n      \"eslint packages\",\n      \"nyc ava\"\n    ]\n  },\n  \"keywords\": [\n    \"microservice\",\n    \"micro\",\n    \"service\",\n    \"message-broker\",\n    \"message\",\n    \"broker\"\n  ],\n  \"dependencies\": {\n    \"fs-extra\": \"^4.0.2\",\n    \"uuid\": \"^3.1.0\"\n  },\n  \"devDependencies\": {\n    \"@zdychacek/detective\": \"git+https://github.com/zdychacek/node-detective.git\",\n    \"ava\": \"^0.23.0\",\n    \"coveralls\": \"^3.0.0\",\n    \"esdoc\": \"^1.0.3\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-node\": \"^1.0.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.10.0\",\n    \"format-package\": \"^4.0.2\",\n    \"glob\": \"^7.1.2\",\n    \"husky\": \"^0.14.3\",\n    \"minimist\": \"^1.2.0\",\n    \"mitm\": \"^1.3.3\",\n    \"nyc\": \"^11.3.0\",\n    \"rimraf\": \"^2.6.2\",\n    \"shelljs\": \"^0.7.8\",\n    \"symlink-dir\": \"^1.1.0\"\n  }\n}\n",
-    "longname": "C:\\Users\\alevine\\Documents\\Projects\\the-architect\\package.json",
+    "content": "{\n  \"name\": \"the-architect\",\n  \"version\": \"0.0.0\",\n  \"description\": \"A service registry and message broker system.\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Aldlevine/the-architect.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/Aldlevine/the-architect/issues\"\n  },\n  \"homepage\": \"https://github.com/Aldlevine/the-architect#readme\",\n  \"author\": \"Aaron Levine <ald.levine@gmail.com>\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"bootstrap\": \"symlink-dir packages packages/node_modules/@the-architect\",\n    \"build\": \"npm run compose -s -- build\",\n    \"compose\": \"node ./lib/compose.js\",\n    \"docs\": \"npm run compose -s -- docs\",\n    \"install\": \"npm run bootstrap\",\n    \"pkgupdate\": \"npm run compose -s -- pkgupdate\",\n    \"precommit\": \"npm run compose -s -- precommit\",\n    \"test\": \"npm run compose -s -- test\"\n  },\n  \"compose\": {\n    \"build\": [\n      \"npm run docs -s\",\n      \"npm run pkgupdate -s\"\n    ],\n    \"docs\": [\n      \"node ./lib/esdoc-external-node/generate-api.js\",\n      \"rimraf docs\",\n      \"rimraf packages/node_modules\",\n      \"esdoc\",\n      \"npm run bootstrap -s\"\n    ],\n    \"pkgupdate\": [\n      \"node ./lib/update-pkgjson.js ./packages\",\n      \"format-package -w\"\n    ],\n    \"precommit\": [\n      \"git stash save -q --keep-index 'pre-commit stash'\",\n      \"npm run test -s\",\n      \"npm run build -s\",\n      [\n        \"git reset -q --hard\",\n        \"git stash pop -q --index\",\n        \"git add README.md package.json packages/**/package.json\"\n      ]\n    ],\n    \"test\": [\n      \"eslint packages\",\n      \"nyc ava\"\n    ]\n  },\n  \"keywords\": [\n    \"microservice\",\n    \"micro\",\n    \"service\",\n    \"message-broker\",\n    \"message\",\n    \"broker\"\n  ],\n  \"dependencies\": {\n    \"debug\": \"^3.1.0\",\n    \"fs-extra\": \"^4.0.2\",\n    \"uuid\": \"^3.1.0\"\n  },\n  \"devDependencies\": {\n    \"@zdychacek/detective\": \"git+https://github.com/zdychacek/node-detective.git\",\n    \"ava\": \"^0.23.0\",\n    \"coveralls\": \"^3.0.0\",\n    \"esdoc\": \"^1.0.3\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-node\": \"^1.0.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.10.0\",\n    \"format-package\": \"^4.0.2\",\n    \"glob\": \"^7.1.2\",\n    \"husky\": \"^0.14.3\",\n    \"minimist\": \"^1.2.0\",\n    \"mitm\": \"^1.3.3\",\n    \"nyc\": \"^11.3.0\",\n    \"rimraf\": \"^2.6.2\",\n    \"shelljs\": \"^0.7.8\",\n    \"symlink-dir\": \"^1.1.0\"\n  }\n}\n",
+    "longname": "/mnt/storage/Documents/Projects/the-architect/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"

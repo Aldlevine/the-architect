@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">packages/message-broker/message-broker.js | the-architect</title>
+  <title data-ice="title">packages/transcoder/json-transcoder.js | the-architect</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -39,107 +39,46 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">packages/message-broker/message-broker.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const EventEmitter = require(&apos;events&apos;);
-const {Server} = require(&apos;net&apos;);
-const UUID = require(&apos;uuid&apos;);
-const ServiceRegistry = require(&apos;@the-architect/service-registry&apos;);
-const Message = require(&apos;@the-architect/message&apos;);
-const JSONTranscoder = require(&apos;@the-architect/transcoder/json-transcoder&apos;);
-const log = require(&apos;debug&apos;)(&apos;@the-architect:message-broker&apos;);
+<div class="content" data-ice="content"><h1 data-ice="title">packages/transcoder/json-transcoder.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const {Transform} = require(&apos;stream&apos;);
 
 /**
- * A class representing a message broker
- * @extends {events~EventEmitter}
+ * The default transcoder. Converts to and from JSON.
+ * @extends {Transcoder}
  */
-module.exports = class MessageBroker extends EventEmitter
+module.exports = class JSONTranscoder extends require(&apos;./transcoder&apos;)
 {
   /**
-   * Creates a message broker.
-   * @param {object} opts - The configuration options.
-   * @param {net~Server} [opts.server=new net.Server] - The server to attach the message broker to.
-   * @param {#Transcoder} [transcoder=JSONTranscoder] - The transcoder.
-   * @return {MessageBroker}
+   * @override
+   * @returns {stream~Transform}
    */
-  constructor ({
-    server = new Server(),
-    transcoder = JSONTranscoder
-  }={})
+  static encoder ()
   {
-    super();
-
-    /** The server instance */
-    this._server = server;
-
-    /** The transcoder constructor */
-    this._transcoder = transcoder;
-
-    this._initEvents();
-  }
-
-  /**
-   * A proxy to the {@link net~Server#listen} method on {@link MessageBroker#server}.
-   * @param {...object} [args] - The args that get passed to {@link net~Server#listen}.
-   */
-  listen (...args)
-  {
-    this._server.listen(...args);
-  }
-
-  /**
-   * Gets the message broker&apos;s server
-   * @type {net~Server}
-   */
-  get server () {return this._server}
-
-
-  /** Initializes the event listeners */
-  _initEvents ()
-  {
-    const server = this._server;
-
-    const events = [&apos;close&apos;, &apos;connection&apos;, &apos;error&apos;, &apos;listening&apos;];
-    for (let event of events) {
-      server.on(event, (...args) =&gt; {
-        this[`_on_${event}`](...args);
-        this.emit(event, ...args)
-      });
-    }
-  }
-
-  /** The &apos;close&apos; event handler */
-  _on_close ()
-  {
-    log(&apos;server closed&apos;);
-  }
-
-
-  /** The &apos;connection&apos; event handler */
-  _on_connection (socket)
-  {
-    log(&apos;received connection&apos;);
-    const transcoder = new this._transcoder(socket);
-
-    transcoder.on(&apos;data&apos;, (data) =&gt; {
-      log(&apos;recieved data&apos;);
-      // transcoder.write(data);
+    return new Transform({
+      writableObjectMode: true,
+      transform (chunk, enc, cb) {
+        this.push(JSON.stringify(chunk));
+        cb();
+      }
     });
-
-    socket.on(&apos;close&apos;, () =&gt; log(&apos;close&apos;));
   }
 
-  /** The &apos;error&apos; event handler */
-  _on_error (err)
+  /**
+   * @override
+   * @returns {stream~Transform}
+   */
+  static decoder ()
   {
-    log(err);
-  }
-
-  /** The &apos;listening&apos; event handler */
-  _on_listening ()
-  {
-    log(&apos;listening&apos;);
+    return new Transform({
+      readableObjectMode: true,
+      transform (chunk, enc, cb) {
+        this.push(JSON.parse(chunk));
+        cb();
+      }
+    });
   }
 }
+
 </code></pre>
 
 </div>
