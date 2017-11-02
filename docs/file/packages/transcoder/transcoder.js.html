@@ -81,11 +81,19 @@ module.exports = class Transcoder extends Duplex
     stream.pipe(decoder);
   }
 
+  /**
+   * @override
+   * Recieves output directly from {@link Transcoder#_decoder}.
+   */
   _read (size)
   {
     this.push(this._decoder.read(size));
   }
 
+  /**
+   * @override
+   * Writes input directly to {@link Transcoder#_encoder}.
+   */
   _write (chunk, enc, cb)
   {
     this._encoder.write(chunk, enc, cb);

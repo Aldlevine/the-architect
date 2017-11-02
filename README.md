@@ -1,4 +1,3 @@
-
 # The Architect
 
 [![Build Status](https://travis-ci.org/Aldlevine/the-architect.svg?branch=master)](https://travis-ci.org/Aldlevine/the-architect)

@@ -1,7 +1,7 @@
 {
-  "coverage": "94.44%",
+  "coverage": "100%",
   "expectCount": 36,
-  "actualCount": 34,
+  "actualCount": 36,
   "files": {
     "packages/message/message.js": {
       "expectCount": 13,
@@ -20,11 +20,8 @@
     },
     "packages/transcoder/transcoder.js": {
       "expectCount": 8,
-      "actualCount": 6,
-      "undocumentLines": [
-        43,
-        48
-      ]
+      "actualCount": 8,
+      "undocumentLines": []
     }
   }
 }
