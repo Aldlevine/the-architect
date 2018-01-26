@@ -69,7 +69,7 @@
   },
   "devDependencies": {
     "@zdychacek/detective": "git+https://github.com/zdychacek/node-detective.git",
-    "ava": "^0.23.0",
+    "ava": "^0.25.0",
     "coveralls": "^3.0.0",
     "esdoc": "^1.0.3",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
