@@ -84,6 +84,6 @@
     "nyc": "^11.3.0",
     "rimraf": "^2.6.2",
     "shelljs": "^0.7.8",
-    "symlink-dir": "^1.1.0"
+    "symlink-dir": "^3.0.0"
   }
 }
